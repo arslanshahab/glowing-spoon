@@ -5,7 +5,7 @@ module.exports = {
       colors: {
         primary: '#0033FF',
         cornflowerblue: '#E1E7FF',
-        solitude: 'rgba(237, 241, 255, 0.5)',
+        solitude: '#edf1ff',
         fern: '#5DC86C',
       },
 
