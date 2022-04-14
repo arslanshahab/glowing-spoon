@@ -6,6 +6,7 @@ import { routes } from '../constants/routes'
 import { Texts } from '../constants/texts'
 import Button from '../components/Button'
 import Header from '../components/Header'
+import ProgressBar from '../components/ProgressBar'
 
 const Home: NextPage = () => {
   return (
@@ -28,6 +29,7 @@ const Home: NextPage = () => {
               <Button reverse>{Texts.explore}</Button>
             </a>
           </Link>
+          <ProgressBar />
         </div>
       </div>
     </>
