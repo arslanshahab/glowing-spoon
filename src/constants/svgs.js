@@ -16,3 +16,46 @@ export const Plus = (
     />
   </svg>
 )
+
+export const Copy = (
+  <svg width='24' height='28' viewBox='0 0 24 34' fill='none' xmlns='http://www.w3.org/2000/svg' className='z-0'>
+    <feBlend mode='difference' in='BackgroundImage' in2='SourceGraphic' />
+    <rect
+      width='14'
+      height='16'
+      rx='1'
+      x='5'
+      y='5'
+      fill='#DCDCDC'
+      fillOpacity='1'
+      stroke='transprent'
+      strokeWidth='2'
+    />
+    <rect width='14' height='16' rx='1' fill='#DCDCDC' fillOpacity='1' stroke='#224831' strokeWidth='2' />
+  </svg>
+)
+
+export const Square = (
+  <svg
+    width='360'
+    height='316'
+    viewBox='0 0 360 316'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+    xmlnsXlink='http://www.w3.org/1999/xlink'>
+    <rect x='0.5' y='0.5' width='359' height='350' fill='white' fillOpacity='0.05' />
+    <rect x='0.5' y='0.5' width='359' height='350' fill='url(#pattern0)' fillOpacity='0.2' />
+    <rect x='0.5' y='0.5' width='359' height='350' stroke='#6FA777' />
+    <defs>
+      <pattern id='pattern0' patternContentUnits='objectBoundingBox' width='0.025' height='0.025641'>
+        <use xlinkHref='#image0_2_26' transform='scale(0.00138889)' />
+      </pattern>
+      <image
+        id='image0_2_26'
+        width='18'
+        height='18'
+        xlinkHref='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAC9JREFUOE9jZKAQ/P379z/ICEYKzWEYNYhwCI6G0WgYDfO8BkvihCMavwpGahkEANojR1+v/VqrAAAAAElFTkSuQmCC'
+      />
+    </defs>
+  </svg>
+)
