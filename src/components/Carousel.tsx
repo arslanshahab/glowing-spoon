@@ -52,9 +52,9 @@ const Carousel = () => {
         <div className='flex justify-between items-center absolute top left w-full h-full'>
           <button
             onClick={movePrev}
-            className='absolute -left-4 2xl:-left-8 w-12 h-12 flex items-center justify-center rounded-full shadow-lg transform rotate-180 bg-white disabled:opacity-25 disabled:cursor-not-allowed z-20 p-0 m-0 transition-all ease-in-out duration-300'
+            className='absolute -left-4 2xl:-left-8 w-12 h-12 flex items-center justify-center rounded-full shadow-md  bg-white disabled:opacity-25 disabled:cursor-not-allowed z-20 p-0 m-0 transition-all ease-in-out duration-300'
             disabled={isDisabled('prev')}>
-            {Arrow}
+            <span className='transform rotate-180'>{Arrow}</span>
             <span className='sr-only'>Prev</span>
           </button>
           <button
