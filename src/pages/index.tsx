@@ -8,14 +8,14 @@ import Button from '../components/Button'
 import Header from '../components/Header'
 import ProgressBar from '../components/ProgressBar'
 import Carousel from '../components/Carousel'
+import CollectionInfo from '../components/Collection'
 
 const Home: NextPage = () => {
   return (
     <>
       <Head>
         <title>Forest.io</title>
-        <meta name='description' content='' />
-        <link rel='icon' href='/favicon.ico' />
+        <meta name='description' content={Texts.headline} />
       </Head>
       <div className='relative w-screen bg-image min-h-screen overflow-x-hidden overflow-y-visible '>
         <Header />
@@ -34,6 +34,7 @@ const Home: NextPage = () => {
         </div>
         <div className='lg:mx-18 2xl:mx-[220px] overflow'>
           <Carousel />
+          <CollectionInfo />
         </div>
         <div className='w-screen'>
           <div className='absolute w-screen bg-gradient-to-b from-white to-solitude bg-opacity-50 mix-blend-multiply'>
