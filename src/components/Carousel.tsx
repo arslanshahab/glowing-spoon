@@ -1,0 +1,86 @@
+import { useState, useRef, useEffect } from 'react'
+import Image from 'next/image'
+import { Arrow } from '../constants/svgs'
+
+// Data
+import data from '../constants/data.json'
+import { Texts } from '../constants/texts'
+
+const Carousel = () => {
+  const maxScrollWidth = useRef(0)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const carousel = useRef<HTMLDivElement>(null)
+
+  const movePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(prevState => prevState - 1)
+    }
+  }
+
+  const moveNext = () => {
+    if (carousel.current !== null && carousel.current.offsetWidth * currentIndex <= maxScrollWidth.current) {
+      setCurrentIndex(prevState => prevState + 1)
+    }
+  }
+
+  const isDisabled = direction => {
+    if (direction === 'prev') {
+      return currentIndex <= 0
+    }
+
+    if (direction === 'next' && carousel.current !== null) {
+      return carousel.current.offsetWidth * currentIndex >= maxScrollWidth.current
+    }
+
+    return false
+  }
+
+  useEffect(() => {
+    if (carousel !== null && carousel.current !== null) {
+      carousel.current.scrollLeft = carousel.current.offsetWidth * currentIndex
+    }
+  }, [currentIndex])
+
+  useEffect(() => {
+    maxScrollWidth.current = carousel.current ? carousel.current.scrollWidth - carousel.current.offsetWidth : 0
+  }, [])
+
+  return (
+    <div className='carousel my-12 py-4 overflow-hidden px-6 lg:px-10'>
+      <h2 className='text-2xl font-bold mb-6'>{Texts.preview}</h2>
+      <div className='relative overflow-visible'>
+        <div className='flex justify-between items-center absolute top left w-full h-full'>
+          <button
+            onClick={movePrev}
+            className='absolute -left-4 2xl:-left-8 w-12 h-12 flex items-center justify-center rounded-full shadow-lg transform rotate-180 bg-white disabled:opacity-25 disabled:cursor-not-allowed z-20 p-0 m-0 transition-all ease-in-out duration-300'
+            disabled={isDisabled('prev')}>
+            {Arrow}
+            <span className='sr-only'>Prev</span>
+          </button>
+          <button
+            onClick={moveNext}
+            className='absolute -right-4 2xl:-right-8 w-12 h-12 flex items-center justify-center rounded-full shadow-md bg-white disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300'
+            disabled={isDisabled('next')}>
+            {Arrow}
+            <span className='sr-only'>Next</span>
+          </button>
+        </div>
+        <div
+          ref={carousel}
+          className='carousel-container relative flex gap-4 md:gap-8 overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0'>
+          {data.resources.map((resource, index) => {
+            return (
+              <div
+                key={index}
+                className='rounded-xl carousel-item text-center relative w-[176px] h-[176px] snap-start cursor-pointer transition-opacity hover:opacity-80'>
+                <Image src={resource.image} width={176} height={176} layout='fixed' alt={resource.title} />
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Carousel

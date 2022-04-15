@@ -23,3 +23,21 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.bg-image {
+  background-image: url('/assets/svgs/ellipse1.svg'), url('/assets/svgs/ellipse2.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain, contain;
+  background-attachment: local, local;
+  background-position: -60% -60%, 120% -80%;
+}
+
+@media only screen and (max-width: 640px) {
+  .bg-image {
+    background-image: url('/assets/svgs/ellipse3.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: local;
+    background-position: 0% 0%;
+  }
+}

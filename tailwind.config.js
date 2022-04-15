@@ -8,7 +8,6 @@ module.exports = {
         solitude: '#edf1ff',
         fern: '#5DC86C',
       },
-
       fontFamily: {
         inter: 'Inter',
       },
