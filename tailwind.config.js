@@ -7,6 +7,7 @@ module.exports = {
         cornflowerblue: '#E1E7FF',
         solitude: '#edf1ff',
         fern: '#5DC86C',
+        mercury: '#E6E6E6',
       },
       fontFamily: {
         inter: 'Inter',
