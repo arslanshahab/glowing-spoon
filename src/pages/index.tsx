@@ -22,10 +22,10 @@ const Home: NextPage = () => {
         <Header />
         <div className='my-14 px-4 mx-auto max-w-[70ch] text-center'>
           <Image src='/assets/imgs/tree.png' width={80} height={80} alt='Tree' />
-          <h1 className='font-bold mt-4 px-4 text-[32px] md:text-[40px] max-w-[50ch] lg:whitespace-pre-wrap'>
+          <h1 className='font-bold mt-6 px-4 text-[32px] md:text-[40px] max-w-[50ch] lg:whitespace-pre-wrap'>
             {Texts.headline}
           </h1>
-          <p className='text-base my-4'>{Texts.sub}</p>
+          <p className='text-base mt-6 mb-8'>{Texts.sub}</p>
           <Link href={routes.openSea} passHref>
             <a target='_blank'>
               <Button reverse>{Texts.explore}</Button>
@@ -47,11 +47,10 @@ const Home: NextPage = () => {
                 height={529}
                 layout='intrinsic'
                 alt='Green world map'
-                className=''
               />
               <div className='mx-auto px-4 max-w-[60ch] text-center'>
                 <h2 className='font-bold mt-4 px-4 mx-auto text-[32px] md:text-[40px]'>{Texts.bottomTitle}</h2>
-                <p className='text-base my-4'>{Texts.bottomText}</p>
+                <p className='text-base mt-4 mb-6'>{Texts.bottomText}</p>
                 <Link href={routes.discord} passHref>
                   <a>
                     <Button>{Texts.community}</Button>
