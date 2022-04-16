@@ -39,12 +39,21 @@ const CollectionInfo = () => {
           </div>
         </div>
         <div className='relative rounded-xl p-4 aspect-square flex flex-col text-white '>
-          <Image src='/assets/svgs/bgimg.svg' layout='fill' alt='View from space' priority />
+          <Image
+            src='/assets/imgs/bgimg.png'
+            layout='fill'
+            objectFit='cover'
+            objectPosition='100%'
+            alt='View from space'
+            className='rounded-xl'
+            priority
+          />
           <strong className='z-10'>{Texts.space}</strong>
+          <div className='absolute top-1/2 left-1/2 w-40 h-40 md:h-20 md:w-20 xl:h-40 xl:w-40 border border-white bg-white bg-opacity-10 transfrom -translate-x-1/2 -translate-y-1/2 '></div>
         </div>
         <div className='relative rounded-xl p-4 aspect-square flex flex-col bg-goblin  text-white overflow-hidden'>
-          <div className='absolute -left-4 -bottom-4'>{Square}</div>
-          <div className='flex md:flex-col lg:flex-row justify-between items-start lg:items-center'>
+          <div className='absolute -left-20 -bottom-20  w-[80%] h-[80%]'>{Square}</div>
+          <div className='flex md:flex-col xl:flex-row justify-between items-start xl:items-center'>
             <strong>{Texts.collection}</strong>
             <BoldText>1 ◻ = 1.6142 km2 </BoldText>
           </div>
