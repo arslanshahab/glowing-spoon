@@ -4,7 +4,7 @@ import { routes } from '../constants/routes'
 import { Plus } from '../constants/svgs'
 import { Texts } from '../constants/texts'
 
-export const Data = [
+export const data = [
   {
     q: 'Lorem ipsum dolor sit ame',
     a: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptatibus veritatis quasi dicta quiacorrupti beatae ullam, excepturi, dolore iusto at rerum minus in impedit nulla a est, expedita cumque.',
@@ -50,7 +50,7 @@ const Faq = () => {
   return (
     <div className='px-4 max-w-[65ch] mx-auto'>
       <h2 className='text-2xl text-center font-bold'>{Texts.questions}</h2>
-      {Data.map((item, index) => (
+      {data.map((item, index) => (
         <Question key={index} question={item.q} answer={item.a} />
       ))}
       <p className='my-6'>
