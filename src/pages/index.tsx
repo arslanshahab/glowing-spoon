@@ -8,6 +8,7 @@ import Button from '../components/Button'
 import Header from '../components/Header'
 import ProgressBar from '../components/ProgressBar'
 import Carousel from '../components/Carousel'
+import Faq from '../components/Faq'
 
 const Home: NextPage = () => {
   return (
@@ -32,12 +33,13 @@ const Home: NextPage = () => {
           </Link>
           <ProgressBar />
         </div>
-        <div className='lg:mx-18 2xl:mx-[220px] overflow'>
+        <div className='lg:mx-16 2xl:mx-[220px] overflow'>
           <Carousel />
         </div>
+        <Faq />
         <div className='w-screen'>
-          <div className='absolute w-screen bg-gradient-to-b from-white to-solitude bg-opacity-50 mix-blend-multiply'>
-            <div className='w-full lg:w-2/3 xl:w-1/2 mx-auto flex flex-col justify-center px-4 my-8'>
+          <div className='absolute w-screen bg-gradient-to-b from-white to-solitude bg-opacity-50 mix-blend-darken'>
+            <div className='w-full lg:w-9/12 xl:w-3/4 mx-auto flex flex-col justify-center px-4 my-8'>
               <Image
                 src='/assets/imgs/mapimgwithoutbg.png'
                 width={1006}
@@ -46,7 +48,7 @@ const Home: NextPage = () => {
                 alt='Green world map'
                 className=''
               />
-              <div className='mx-auto px-4 max-w-[70ch] text-center'>
+              <div className='mx-auto px-4 max-w-[60ch] text-center'>
                 <h2 className='font-bold mt-4 px-4 mx-auto text-[32px] md:text-[40px]'>{Texts.bottomTitle}</h2>
                 <p className='text-base my-4'>{Texts.bottomText}</p>
                 <Link href={routes.discord} passHref>
