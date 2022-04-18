@@ -11,8 +11,6 @@ export const BoldText = ({ children }) => {
 }
 
 const CollectionInfo = () => {
-  const coordinates = '3,317, 17.933'
-
   return (
     <div className='mb-8 pb-4 px-6 lg:px-10'>
       <h2 className='text-2xl font-bold mb-6'>{Texts.info}</h2>
@@ -25,12 +23,12 @@ const CollectionInfo = () => {
           </div>
           <div
             className='group relative my-4 md:my-2 lg:my-4 cursor-pointer'
-            onClick={() => navigator.clipboard.writeText(`${coordinates}`)}>
+            onClick={() => navigator.clipboard.writeText(`${Texts.coordinatesValue}`)}>
             <button className='absolute right-0 top-2 cursor-pointer transition-all opacity-80 group-hover:opacity-100 group-active:opacity-100 group-active:scale-110'>
               {Copy}
             </button>
             <LightText>{Texts.coordinates}</LightText>
-            <BoldText>{coordinates}</BoldText>
+            <BoldText>{Texts.coordinatesValue}</BoldText>
           </div>
           <div className='mt-4 md:mt-2 lg:mt-4'>
             <LightText>{Texts.area}</LightText>
@@ -51,8 +49,10 @@ const CollectionInfo = () => {
           <strong className='z-10'>{Texts.space}</strong>
           <div className='absolute top-1/2 left-1/2 w-40 h-40 md:h-20 md:w-20 xl:h-40 xl:w-40 border border-white bg-white bg-opacity-10 transfrom -translate-x-1/2 -translate-y-1/2 '></div>
         </div>
-        <div className='relative rounded-xl p-4 aspect-square flex flex-col bg-goblin  text-white overflow-hidden'>
-          <div className='absolute -left-20 -bottom-20  w-[80%] h-[80%]'>{Square}</div>
+        <div className='relative rounded-xl p-4 aspect-square flex flex-col bg-goblin text-white overflow-hidden'>
+          <div className='absolute right-[20%] bottom-0  top-[20%] md:top-[30%] xl:top-[20%] h-[100%] w-[100%]'>
+            {Square}
+          </div>
           <div className='flex md:flex-col xl:flex-row justify-between items-start xl:items-center'>
             <strong>{Texts.collection}</strong>
             <BoldText>1 ◻ = 1.6142 km2 </BoldText>

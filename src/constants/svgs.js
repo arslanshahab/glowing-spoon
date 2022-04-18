@@ -36,13 +36,7 @@ export const Copy = (
 )
 
 export const Square = (
-  <svg
-    width='360'
-    height='316'
-    viewBox='0 0 360 316'
-    fill='none'
-    xmlns='http://www.w3.org/2000/svg'
-    xmlnsXlink='http://www.w3.org/1999/xlink'>
+  <svg viewBox='0 0 360 316' fill='none' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink'>
     <rect x='0.5' y='0.5' width='359' height='350' fill='white' fillOpacity='0.05' />
     <rect x='0.5' y='0.5' width='359' height='350' fill='url(#pattern0)' fillOpacity='0.2' />
     <rect x='0.5' y='0.5' width='359' height='350' stroke='#6FA777' />

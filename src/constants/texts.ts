@@ -21,4 +21,5 @@ export const Texts = {
   questions: 'Your questions, answered',
   moreQuestions: 'Still have more questions? ',
   contact: 'Contact us',
+  coordinatesValue: '3,317, 17.933',
 }
