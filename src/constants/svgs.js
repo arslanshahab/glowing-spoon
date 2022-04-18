@@ -7,16 +7,6 @@ export const Arrow = (
   </svg>
 )
 
-export const Plus = (
-  <svg width='9' height='9' viewBox='0 0 9 9' fill='none' xmlns='http://www.w3.org/2000/svg'>
-    <path
-      d='M3.42045 8.36932V0.323863H5.45455V8.36932H3.42045ZM0.414773 5.36364V3.32955H8.46023V5.36364H0.414773Z'
-      fill='black'
-      fillOpacity='0.5'
-    />
-  </svg>
-)
-
 export const Copy = (
   <svg width='24' height='28' viewBox='0 0 24 34' fill='none' xmlns='http://www.w3.org/2000/svg' className='z-0'>
     <feBlend mode='difference' in='BackgroundImage' in2='SourceGraphic' />
