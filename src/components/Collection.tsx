@@ -45,6 +45,7 @@ const CollectionInfo = () => {
             alt='View from space'
             className='rounded-xl'
             priority
+            draggable={false}
           />
           <strong className='z-10'>{Texts.space}</strong>
           <div className='absolute top-1/2 left-1/2 w-40 h-40 md:h-20 md:w-20 xl:h-40 xl:w-40 border border-white bg-white bg-opacity-10 transfrom -translate-x-1/2 -translate-y-1/2 '></div>
