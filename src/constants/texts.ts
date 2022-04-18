@@ -8,7 +8,12 @@ export const Texts = {
   minted: 'NFTs minted',
   preview: 'NFT preview',
   info: 'Collection info',
-  parametres: 'Parametres',
+  parametres: 'Parameters',
+  country: 'Country',
+  coordinates: 'Coordinates',
+  area: 'Area',
+  space: 'View from space',
+  collection: 'Collection of 1000',
   community: 'Join our community',
   bottomTitle: 'To protect every forest',
   bottomText:
@@ -16,4 +21,5 @@ export const Texts = {
   questions: 'Your questions, answered',
   moreQuestions: 'Still have more questions? ',
   contact: 'Contact us',
+  coordinatesValue: '3,317, 17.933',
 }

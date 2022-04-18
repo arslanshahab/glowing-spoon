@@ -71,9 +71,18 @@ const Carousel = () => {
           {data.resources.map((resource, index) => {
             return (
               <div
+                draggable={false}
                 key={index}
                 className='rounded-xl carousel-item text-center relative w-[176px] h-[176px] snap-start cursor-pointer transition-opacity hover:opacity-80'>
-                <Image src={resource.image} width={176} height={176} layout='fixed' alt={resource.title} />
+                <Image
+                  draggable={false}
+                  onClick={() => console.log('click')}
+                  src={resource.image}
+                  width={176}
+                  height={176}
+                  layout='fixed'
+                  alt={resource.title}
+                />
               </div>
             )
           })}

@@ -8,6 +8,7 @@ import Button from '../components/Button'
 import Header from '../components/Header'
 import ProgressBar from '../components/ProgressBar'
 import Carousel from '../components/Carousel'
+import CollectionInfo from '../components/Collection'
 import Faq from '../components/Faq'
 
 const Home: NextPage = () => {
@@ -15,17 +16,16 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Forest.io</title>
-        <meta name='description' content='' />
-        <link rel='icon' href='/favicon.ico' />
+        <meta name='description' content={Texts.headline} />
       </Head>
       <div className='relative w-screen bg-image min-h-screen overflow-x-hidden overflow-y-visible '>
         <Header />
         <div className='my-14 px-4 mx-auto max-w-[70ch] text-center'>
           <Image src='/assets/imgs/tree.png' width={80} height={80} alt='Tree' />
-          <h1 className='font-bold mt-4 px-4 text-[32px] md:text-[40px] max-w-[50ch] lg:whitespace-pre-wrap'>
+          <h1 className='font-bold mt-6 px-4 text-[32px] md:text-[40px] max-w-[50ch] lg:whitespace-pre-wrap'>
             {Texts.headline}
           </h1>
-          <p className='text-base my-4'>{Texts.sub}</p>
+          <p className='text-base mt-6 mb-8'>{Texts.sub}</p>
           <Link href={routes.openSea} passHref>
             <a target='_blank'>
               <Button reverse>{Texts.explore}</Button>
@@ -35,6 +35,7 @@ const Home: NextPage = () => {
         </div>
         <div className='lg:mx-16 2xl:mx-[220px] overflow'>
           <Carousel />
+          <CollectionInfo />
         </div>
         <Faq />
         <div className='w-screen'>
@@ -46,11 +47,10 @@ const Home: NextPage = () => {
                 height={529}
                 layout='intrinsic'
                 alt='Green world map'
-                className=''
               />
               <div className='mx-auto px-4 max-w-[60ch] text-center'>
                 <h2 className='font-bold mt-4 px-4 mx-auto text-[32px] md:text-[40px]'>{Texts.bottomTitle}</h2>
-                <p className='text-base my-4'>{Texts.bottomText}</p>
+                <p className='text-base mt-4 mb-6'>{Texts.bottomText}</p>
                 <Link href={routes.discord} passHref>
                   <a>
                     <Button>{Texts.community}</Button>
