@@ -51,7 +51,7 @@ const CollectionInfo = () => {
             <LightText>{Texts.coordinates}</LightText>
             <BoldText>{Texts.coordinatesValue}</BoldText>
           </div>
-          <div className='mt-4 md:mt-2 lg:mt-4'>
+          <div className='-ml-4 md:ml-0 mt-4 md:mt-2 lg:mt-4 text-black md:text-white'>
             <LightText>{Texts.area}</LightText>
             <BoldText>1614.16 km2</BoldText>
             <BoldText>398867.54 acres</BoldText>
