@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { routes } from '../constants/routes'
-import { Plus } from '../constants/svgs'
 import { Texts } from '../constants/texts'
 
 export const Data = [

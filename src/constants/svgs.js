@@ -7,24 +7,6 @@ export const Arrow = (
   </svg>
 )
 
-export const Copy = (
-  <svg width='24' height='28' viewBox='0 0 24 34' fill='none' xmlns='http://www.w3.org/2000/svg' className='z-0'>
-    <feBlend mode='difference' in='BackgroundImage' in2='SourceGraphic' />
-    <rect
-      width='14'
-      height='16'
-      rx='1'
-      x='5'
-      y='5'
-      fill='#DCDCDC'
-      fillOpacity='1'
-      stroke='transprent'
-      strokeWidth='2'
-    />
-    <rect width='14' height='16' rx='1' fill='#DCDCDC' fillOpacity='1' stroke='#224831' strokeWidth='2' />
-  </svg>
-)
-
 export const Square = (
   <svg viewBox='0 0 360 316' fill='none' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink'>
     <rect x='0.5' y='0.5' width='359' height='350' fill='white' fillOpacity='0.05' />

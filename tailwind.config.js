@@ -10,6 +10,8 @@ module.exports = {
         goblin: '#438C4D',
         mercury: '#E6E6E6',
         everglade: '#224831',
+        alto: '#DCDCDC',
+        dovegray: '#707070',
       },
       fontFamily: {
         inter: 'Inter',

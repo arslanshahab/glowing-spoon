@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Texts } from '../constants/texts'
-import { Copy, Square } from '../constants/svgs'
+import { Square } from '../constants/svgs'
 
 export const LightText = ({ children }) => {
   return <p className='text-sm opacity-60'>{children}</p>
@@ -15,17 +15,38 @@ const CollectionInfo = () => {
     <div className='mb-8 pb-4 px-6 lg:px-10'>
       <h2 className='text-2xl font-bold mb-6'>{Texts.info}</h2>
       <div className='grid md:grid-cols-3 gap-4 lg:gap-8 '>
-        <div className='relative rounded-xl p-4 aspect-square  flex flex-col justify-end bg-everglade text-white'>
-          <strong className='text-base absolute top-4'>{Texts.parametres}</strong>
-          <div className='my-4 md:my-2 lg:my-4'>
+        <div className='relative rounded-xl p-4 aspect-square flex flex-col justify-center md:justify-end md:bg-everglade text-white'>
+          <strong className='text-black -ml-4 md:ml-0 md:text-white text-base absolute top-4'>
+            {Texts.parametres}
+          </strong>
+          <div className='-ml-4 md:ml-0 my-4 md:my-2 lg:my-4 text-black md:text-white'>
             <LightText>{Texts.country}</LightText>
             <BoldText>Republic of Congo</BoldText>
           </div>
           <div
-            className='group relative my-4 md:my-2 lg:my-4 cursor-pointer'
+            className='text-black -ml-4 md:ml-0 md:text-white group relative my-4 md:my-2 lg:my-4 cursor-pointer'
             onClick={() => navigator.clipboard.writeText(`${Texts.coordinatesValue}`)}>
             <button className='absolute right-0 top-2 cursor-pointer transition-all opacity-80 group-hover:opacity-100 group-active:opacity-100 group-active:scale-110'>
-              {Copy}
+              <svg width='24' height='28' viewBox='0 0 24 34' xmlns='http://www.w3.org/2000/svg'>
+                <feBlend mode='difference' in='BackgroundImage' in2='SourceGraphic' />
+                <rect
+                  className='fill-dovegray  md:fill-alto'
+                  width='14'
+                  height='16'
+                  rx='1'
+                  x='5'
+                  y='5'
+                  fillOpacity='1'
+                />
+                <rect
+                  className='fill-dovegray md:fill-alto  stroke-white md:stroke-everglade'
+                  width='14'
+                  height='16'
+                  rx='1'
+                  fillOpacity='1'
+                  strokeWidth='2'
+                />
+              </svg>
             </button>
             <LightText>{Texts.coordinates}</LightText>
             <BoldText>{Texts.coordinatesValue}</BoldText>
