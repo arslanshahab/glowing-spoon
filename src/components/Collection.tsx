@@ -15,7 +15,7 @@ const CollectionInfo = () => {
     <div className='mb-8 pb-4 px-6 lg:px-10'>
       <h2 className='text-2xl font-bold mb-6'>{Texts.info}</h2>
       <div className='grid md:grid-cols-3 gap-4 lg:gap-8 '>
-        <div className='relative rounded-xl p-4 aspect-square flex flex-col justify-center md:justify-end md:bg-everglade text-white'>
+        <div className='relative rounded-xl p-4 aspect-square flex flex-col justify-end md:bg-everglade text-white'>
           <strong className='text-black -ml-4 md:ml-0 md:text-white text-base absolute top-4'>
             {Texts.parametres}
           </strong>
