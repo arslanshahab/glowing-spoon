@@ -46,7 +46,7 @@ const Carousel = () => {
   }, [])
 
   return (
-    <div className='carousel my-12 py-4 overflow-hidden px-6 lg:px-10'>
+    <div className='carousel my-12 py-4 overflow-x-hidden px-6 lg:px-10'>
       <h2 className='text-2xl font-bold mb-6'>{Texts.preview}</h2>
       <div className='relative overflow-visible'>
         <div className='flex justify-between items-center absolute top left w-full h-full'>
@@ -82,6 +82,7 @@ const Carousel = () => {
                   height={176}
                   layout='fixed'
                   alt={resource.title}
+                  className='rounded-xl'
                 />
               </div>
             )
