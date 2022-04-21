@@ -59,7 +59,7 @@ const CollectionInfo = () => {
         </div>
         <div className='relative rounded-xl p-4 aspect-square flex flex-col text-white '>
           <Image
-            src='/assets/imgs/bgimg.png'
+            src='/assets/imgs/bgimg.jpg'
             layout='fill'
             objectFit='cover'
             objectPosition='100%'

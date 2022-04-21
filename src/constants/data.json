@@ -2,39 +2,39 @@
   "resources": [
     {
       "title": "NFT 1",
-      "image": "/assets/imgs/forest1.png"
+      "image": "/assets/imgs/forest1.jpg"
     },
     {
       "title": "NFT 2",
-      "image": "/assets/imgs/forest2.png"
+      "image": "/assets/imgs/forest2.jpg"
     },
     {
       "title": "NFT 3",
-      "image": "/assets/imgs/forest3.png"
+      "image": "/assets/imgs/forest3.jpg"
     },
     {
       "title": "NFT 4",
-      "image": "/assets/imgs/forest4.png"
+      "image": "/assets/imgs/forest4.jpg"
     },
     {
       "title": "NFT 5",
-      "image": "/assets/imgs/forest5.png"
+      "image": "/assets/imgs/forest5.jpg"
     },
     {
       "title": "NFT 6",
-      "image": "/assets/imgs/forest6.png"
+      "image": "/assets/imgs/forest6.jpg"
     },
     {
       "title": "NFT 4",
-      "image": "/assets/imgs/forest4.png"
+      "image": "/assets/imgs/forest5.jpg"
     },
     {
       "title": "NFT 5",
-      "image": "/assets/imgs/forest5.png"
+      "image": "/assets/imgs/forest5.jpg"
     },
     {
       "title": "NFT 6",
-      "image": "/assets/imgs/forest6.png"
+      "image": "/assets/imgs/forest6.jpg"
     }
   ]
 }
