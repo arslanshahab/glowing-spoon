@@ -34,7 +34,7 @@ export const Question = ({ question, answer }) => {
         onClick={() => setExpanded(!expanded)}>
         <h3 className='text-base font-bold'>{question}</h3>
         <div
-          className={`realtive w-8 h-8 bg-black bg-opacity-5 flex items-center justify-center rounded-full transition-transform transform origin-center ${
+          className={`relative w-8 h-8 bg-black bg-opacity-5 flex items-center justify-center rounded-full transition-transform transform origin-center ${
             expanded ? '-rotate-45' : 'rotate-0'
           }`}>
           <span className='w-2 h-0.5 bg-black bg-opacity-50'></span>

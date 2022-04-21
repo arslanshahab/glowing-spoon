@@ -13,10 +13,11 @@ export const BoldText = ({ children }) => {
 const CollectionInfo = () => {
   return (
     <div className='mb-8 pb-4 px-6 lg:px-10'>
-      <h2 className='text-2xl font-bold mb-6'>{Texts.info}</h2>
+      <h2 className='hidden md:block text-2xl font-bold mb-6'>{Texts.info}</h2>
       <div className='grid md:grid-cols-3 gap-4 lg:gap-8 '>
-        <div className='relative rounded-xl p-4 aspect-square flex flex-col justify-end md:bg-everglade text-white'>
-          <strong className='text-black -ml-4 md:ml-0 md:text-white text-base absolute top-4'>
+        <div className='relative rounded-xl p-4 aspect-square flex flex-col justify-between md:justify-end md:bg-everglade text-white'>
+          <h2 className='md:hidden text-2xl text-black font-bold mb-6 -ml-4'>{Texts.info}</h2>
+          <strong className='text-black -ml-4 md:ml-0 md:text-white text-base md:absolute top-4'>
             {Texts.parametres}
           </strong>
           <div className='-ml-4 md:ml-0 my-4 md:my-2 lg:my-4 text-black md:text-white'>
@@ -30,7 +31,7 @@ const CollectionInfo = () => {
               <svg width='24' height='28' viewBox='0 0 24 34' xmlns='http://www.w3.org/2000/svg'>
                 <feBlend mode='difference' in='BackgroundImage' in2='SourceGraphic' />
                 <rect
-                  className='fill-dovegray  md:fill-alto'
+                  className='fill-dovegray md:fill-alto'
                   width='14'
                   height='16'
                   rx='1'
@@ -59,7 +60,7 @@ const CollectionInfo = () => {
         </div>
         <div className='relative rounded-xl p-4 aspect-square flex flex-col text-white '>
           <Image
-            src='/assets/imgs/bgimg.png'
+            src='/assets/imgs/bgimg.jpg'
             layout='fill'
             objectFit='cover'
             objectPosition='100%'
@@ -72,7 +73,7 @@ const CollectionInfo = () => {
           <div className='absolute top-1/2 left-1/2 w-40 h-40 md:h-20 md:w-20 xl:h-40 xl:w-40 border border-white bg-white bg-opacity-10 transfrom -translate-x-1/2 -translate-y-1/2 '></div>
         </div>
         <div className='relative rounded-xl p-4 aspect-square flex flex-col bg-goblin text-white overflow-hidden'>
-          <div className='absolute right-[20%] bottom-0  top-[20%] md:top-[30%] xl:top-[20%] h-[100%] w-[100%]'>
+          <div className='absolute right-[20%] bottom-0 top-[20%] md:top-[30%] xl:top-[20%] h-[100%] w-[100%]'>
             {Square}
           </div>
           <div className='flex md:flex-col xl:flex-row justify-between items-start xl:items-center'>
