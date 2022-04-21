@@ -16,7 +16,7 @@ const CollectionInfo = () => {
       <h2 className='hidden md:block text-2xl font-bold mb-6'>{Texts.info}</h2>
       <div className='grid md:grid-cols-3 gap-4 lg:gap-8 '>
         <div className='relative rounded-xl p-4 aspect-square flex flex-col justify-between md:justify-end md:bg-everglade text-white'>
-          <h2 className='md:hidden text-2xl text-black dark:text-white font-bold mb-6 -ml-4'>{Texts.info}</h2>
+          <h2 className='md:hidden text-2xl text-black font-bold mb-6 -ml-4'>{Texts.info}</h2>
           <strong className='text-black -ml-4 md:ml-0 md:text-white text-base md:absolute top-4'>
             {Texts.parametres}
           </strong>
@@ -31,7 +31,7 @@ const CollectionInfo = () => {
               <svg width='24' height='28' viewBox='0 0 24 34' xmlns='http://www.w3.org/2000/svg'>
                 <feBlend mode='difference' in='BackgroundImage' in2='SourceGraphic' />
                 <rect
-                  className='fill-dovegray  md:fill-alto'
+                  className='fill-dovegray md:fill-alto'
                   width='14'
                   height='16'
                   rx='1'
@@ -40,7 +40,7 @@ const CollectionInfo = () => {
                   fillOpacity='1'
                 />
                 <rect
-                  className='fill-dovegray md:fill-alto  stroke-white dark:stroke-gray-800 md:stroke-everglade md:dark:stroke-everglade'
+                  className='fill-dovegray md:fill-alto  stroke-white md:stroke-everglade'
                   width='14'
                   height='16'
                   rx='1'

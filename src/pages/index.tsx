@@ -18,11 +18,11 @@ const Home: NextPage = () => {
         <title>Forest.io</title>
         <meta name='description' content={Texts.headline} />
       </Head>
-      <div className='relative w-screen bg-image bg-white dark:gray-800'>
+      <div className='relative w-screen bg-image bg-white '>
         <Header />
         <div className='my-14 px-4 mx-auto max-w-[70ch] text-center'>
           <Image src='/assets/imgs/tree.png' width={80} height={80} alt='Tree' />
-          <h1 className='font-bold text-black dark:text-white mt-6 px-4 text-[32px] md:text-[40px] max-w-[50ch] lg:whitespace-pre-wrap'>
+          <h1 className='font-bold text-black mt-6 px-4 text-[32px] md:text-[40px] max-w-[50ch] lg:whitespace-pre-wrap'>
             {Texts.headline}
           </h1>
           <p className='text-base mt-6 mb-8'>{Texts.sub}</p>

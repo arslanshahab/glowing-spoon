@@ -9,7 +9,7 @@ const ProgressBar = () => {
         <span className='font-bold'>{Texts.minted}</span>
         <span className='font-bold'>1000</span>
       </div>
-      <div className='w-full bg-black dark:bg-gray-500 my-4 bg-opacity-5 dark:bg-opacity-100 rounded-full h-2.5 '>
+      <div className='w-full bg-black my-4 bg-opacity-5 rounded-full h-2.5 '>
         <div className='bg-fern h-2.5 rounded-full' style={{ width: claimed }}></div>
       </div>
       <p className='text-base text-left '>{claimed} % claimed</p>
