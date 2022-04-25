@@ -1,17 +1,36 @@
+import { useEffect, useState } from 'react'
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
 import Image from 'next/image'
 import { routes } from '../constants/routes'
-import { Texts } from '../constants/texts'
+import { baseTotalValue, defaultMintedValue, Texts } from '../constants/texts'
 import Button from '../components/Button'
 import Header from '../components/Header'
 import ProgressBar from '../components/ProgressBar'
 import Carousel from '../components/Carousel'
 import CollectionInfo from '../components/Collection'
 import Faq from '../components/Faq'
+import axios from 'axios'
 
 const Home: NextPage = () => {
+  const [collection, setCollection] = useState<any>()
+
+  useEffect(() => {
+    axios
+      .get('collection/forestcongo', {
+        headers: {
+          'X-API-KEY': process.env.NEXT_PUBLIC_OPENSEA_API_KEY || '',
+        },
+      })
+      .then(res => {
+        const data = res.data.collection
+        const { editors, ...rest } = data
+        // remove editors from collection
+        setCollection(rest)
+      })
+  }, [])
+
   return (
     <>
       <Head>
@@ -23,7 +42,7 @@ const Home: NextPage = () => {
         <div className='my-14 px-4 mx-auto max-w-[70ch] text-center'>
           <Image src='/assets/imgs/tree.png' width={80} height={80} alt='Tree' />
           <h1 className='font-bold text-black mt-6 px-4 text-[32px] md:text-[40px] max-w-[50ch] lg:whitespace-pre-wrap'>
-            {Texts.headline}
+            {collection?.description || Texts.headline}
           </h1>
           <p className='text-base mt-6 mb-8'>{Texts.sub}</p>
           <Link href={routes.openSea} passHref>
@@ -31,7 +50,10 @@ const Home: NextPage = () => {
               <Button reverse>{Texts.explore}</Button>
             </a>
           </Link>
-          <ProgressBar />
+          <ProgressBar
+            minted={collection?.stats?.num_owners || defaultMintedValue}
+            total={collection?.dev_seller_fee_basis_points || baseTotalValue}
+          />
         </div>
         <div className='lg:mx-16 2xl:mx-[220px]'>
           <Carousel />
