@@ -2,12 +2,9 @@ import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { Arrow } from '../constants/svgs'
 import { Texts } from '../constants/texts'
-import { useRouter } from 'next/router'
-import Link from 'next/link'
 
 const Carousel = ({ data, assetsInfo, getNextRecords }: any) => {
   const maxScrollWidth = useRef(0)
-  const router = useRouter()
   const [currentIndex, setCurrentIndex] = useState(0)
   const carousel = useRef<HTMLDivElement>(null)
 

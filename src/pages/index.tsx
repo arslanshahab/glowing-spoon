@@ -15,7 +15,7 @@ import { http } from './../utils/http'
 
 const Home: NextPage = () => {
   const [collection, setCollection] = useState<any>()
-  const [assets, setAssets] = useState<any[]>()
+  const [assets, setAssets] = useState<any[]>([])
   const [assetsInfo, setAssetsInfo] = useState<any>()
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const Home: NextPage = () => {
       previousCursor: data.previous,
     }
     setAssetsInfo(assetsInfo)
-    const assets = data.assets.map(x => {
+    const assetsData = data.assets.map(x => {
       return {
         id: x.id,
         image_url: x.image_url,
@@ -61,7 +61,7 @@ const Home: NextPage = () => {
         permalink: x.permalink,
       }
     })
-    setAssets(assets)
+    setAssets([...assets, ...assetsData])
   }
 
   return (
