@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Image from 'next/image'
 import { routes } from '../constants/routes'
-import { baseTotalValue, defaultMintedValue, Texts } from '../constants/texts'
+import { baseTotalValue, collectionSlug, defaultLimit, defaultMintedValue, Texts } from '../constants/texts'
 import Button from '../components/Button'
 import Header from '../components/Header'
 import ProgressBar from '../components/ProgressBar'
@@ -16,6 +16,7 @@ import { http } from './../utils/http'
 const Home: NextPage = () => {
   const [collection, setCollection] = useState<any>()
   const [assets, setAssets] = useState<any[]>()
+  const [assetsInfo, setAssetsInfo] = useState<any>()
 
   useEffect(() => {
     ;(async () => {
@@ -36,13 +37,21 @@ const Home: NextPage = () => {
     setCollection(rest)
   }
 
-  const getCollectionAssets = async () => {
-    const response = await http.get('/assets?collection=forestcongo?limit=50', {
-      headers: {
-        'X-API-KEY': process.env.NEXT_PUBLIC_OPENSEA_API_KEY || '',
-      },
-    })
+  const getCollectionAssets = async (cursor?: string) => {
+    const response = await http.get(
+      `/assets?collection=${collectionSlug}&limit=${defaultLimit}&cursor=${cursor || ''}`,
+      {
+        headers: {
+          'X-API-KEY': process.env.NEXT_PUBLIC_OPENSEA_API_KEY || '',
+        },
+      }
+    )
     const data = response.data
+    const assetsInfo = {
+      nextCursor: data.next,
+      previousCursor: data.previous,
+    }
+    setAssetsInfo(assetsInfo)
     const assets = data.assets.map(x => {
       return {
         id: x.id,
@@ -50,8 +59,6 @@ const Home: NextPage = () => {
         image_thumbnail_url: x.image_thumbnail_url,
         name: x.name,
         permalink: x.permalink,
-        next: x.next,
-        previous: x.previous,
       }
     })
     setAssets(assets)
@@ -82,7 +89,11 @@ const Home: NextPage = () => {
           />
         </div>
         <div className='lg:mx-16 2xl:mx-[220px]'>
-          <Carousel data={assets} />
+          <Carousel
+            data={assets}
+            assetsInfo={assetsInfo}
+            getNextRecords={(cursor: string) => getCollectionAssets(cursor)}
+          />
           <CollectionInfo />
         </div>
         <Faq />

@@ -24,5 +24,7 @@ export const Texts = {
   coordinatesValue: '3,317, 17.933',
 }
 
-export const defaultMintedValue = 0;
-export const baseTotalValue = 1000;
+export const defaultMintedValue = 0
+export const baseTotalValue = 1000
+export const collectionSlug = 'forestcongo'
+export const defaultLimit = 20
