@@ -11,25 +11,51 @@ import ProgressBar from '../components/ProgressBar'
 import Carousel from '../components/Carousel'
 import CollectionInfo from '../components/Collection'
 import Faq from '../components/Faq'
-import axios from 'axios'
+import { http } from './../utils/http'
 
 const Home: NextPage = () => {
   const [collection, setCollection] = useState<any>()
+  const [assets, setAssets] = useState<any[]>()
 
   useEffect(() => {
-    axios
-      .get('collection/forestcongo', {
-        headers: {
-          'X-API-KEY': process.env.NEXT_PUBLIC_OPENSEA_API_KEY || '',
-        },
-      })
-      .then(res => {
-        const data = res.data.collection
-        const { editors, ...rest } = data
-        // remove editors from collection
-        setCollection(rest)
-      })
+    ;(async () => {
+      await getCollectionInfo()
+      await getCollectionAssets()
+    })()
   }, [])
+
+  const getCollectionInfo = async () => {
+    const response = await http.get('/collection/forestcongo', {
+      headers: {
+        'X-API-KEY': process.env.NEXT_PUBLIC_OPENSEA_API_KEY || '',
+      },
+    })
+    const data = response.data.collection
+    // remove editors from collection
+    const { editors, ...rest } = data
+    setCollection(rest)
+  }
+
+  const getCollectionAssets = async () => {
+    const response = await http.get('/assets?collection=forestcongo?limit=50', {
+      headers: {
+        'X-API-KEY': process.env.NEXT_PUBLIC_OPENSEA_API_KEY || '',
+      },
+    })
+    const data = response.data
+    const assets = data.assets.map(x => {
+      return {
+        id: x.id,
+        image_url: x.image_url,
+        image_thumbnail_url: x.image_thumbnail_url,
+        name: x.name,
+        permalink: x.permalink,
+        next: x.next,
+        previous: x.previous,
+      }
+    })
+    setAssets(assets)
+  }
 
   return (
     <>
@@ -51,12 +77,12 @@ const Home: NextPage = () => {
             </a>
           </Link>
           <ProgressBar
-            minted={collection?.stats?.num_owners || defaultMintedValue}
-            total={collection?.dev_seller_fee_basis_points || baseTotalValue}
+            minted={collection?.stats?.total_sales || defaultMintedValue}
+            total={collection?.stats?.count || baseTotalValue}
           />
         </div>
         <div className='lg:mx-16 2xl:mx-[220px]'>
-          <Carousel />
+          <Carousel data={assets} />
           <CollectionInfo />
         </div>
         <Faq />

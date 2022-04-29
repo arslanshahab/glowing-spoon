@@ -3,10 +3,10 @@ import Image from 'next/image'
 import { Arrow } from '../constants/svgs'
 
 // Data
-import data from '../constants/data.json'
+// import data from '../constants/data.json'
 import { Texts } from '../constants/texts'
 
-const Carousel = () => {
+const Carousel = ({ data }: any) => {
   const maxScrollWidth = useRef(0)
   const [currentIndex, setCurrentIndex] = useState(0)
   const carousel = useRef<HTMLDivElement>(null)
@@ -68,7 +68,7 @@ const Carousel = () => {
         <div
           ref={carousel}
           className='carousel-container relative flex gap-4 md:gap-8 overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0'>
-          {data.resources.map((resource, index) => {
+          {data?.map((resource, index) => {
             return (
               <div
                 draggable={false}
@@ -77,11 +77,11 @@ const Carousel = () => {
                 <Image
                   draggable={false}
                   onClick={() => console.log('click')}
-                  src={resource.image}
+                  src={resource.image_thumbnail_url}
                   width={176}
                   height={176}
                   layout='fixed'
-                  alt={resource.title}
+                  alt={resource.name}
                   className='rounded-xl'
                 />
               </div>
