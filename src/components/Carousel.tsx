@@ -1,12 +1,9 @@
 import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { Arrow } from '../constants/svgs'
-
-// Data
-import data from '../constants/data.json'
 import { Texts } from '../constants/texts'
 
-const Carousel = () => {
+const Carousel = ({ data, assetsInfo, getNextRecords }: any) => {
   const maxScrollWidth = useRef(0)
   const [currentIndex, setCurrentIndex] = useState(0)
   const carousel = useRef<HTMLDivElement>(null)
@@ -18,6 +15,9 @@ const Carousel = () => {
   }
 
   const moveNext = () => {
+    if (assetsInfo.nextCursor) {
+      getNextRecords(assetsInfo.nextCursor)
+    }
     if (carousel.current !== null && carousel.current.offsetWidth * currentIndex <= maxScrollWidth.current) {
       setCurrentIndex(prevState => prevState + 1)
     }
@@ -68,22 +68,23 @@ const Carousel = () => {
         <div
           ref={carousel}
           className='carousel-container relative flex gap-4 md:gap-8 overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0'>
-          {data.resources.map((resource, index) => {
+          {data?.map((resource, index) => {
             return (
               <div
                 draggable={false}
                 key={index}
                 className='rounded-xl carousel-item text-center relative w-[176px] h-[176px] snap-start cursor-pointer transition-opacity hover:opacity-80'>
-                <Image
-                  draggable={false}
-                  onClick={() => console.log('click')}
-                  src={resource.image}
-                  width={176}
-                  height={176}
-                  layout='fixed'
-                  alt={resource.title}
-                  className='rounded-xl'
-                />
+                <a target='_blank' href={resource.permalink} rel='noopener noreferrer'>
+                  <Image
+                    draggable={false}
+                    src={resource.image_thumbnail_url}
+                    width={176}
+                    height={176}
+                    layout='fixed'
+                    alt={resource.name}
+                    className='rounded-xl'
+                  />
+                </a>
               </div>
             )
           })}

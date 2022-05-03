@@ -1,17 +1,69 @@
+import { useEffect, useState } from 'react'
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
 import Image from 'next/image'
 import { routes } from '../constants/routes'
-import { Texts } from '../constants/texts'
+import { baseTotalValue, collectionSlug, defaultLimit, defaultMintedValue, Texts } from '../constants/texts'
 import Button from '../components/Button'
 import Header from '../components/Header'
 import ProgressBar from '../components/ProgressBar'
 import Carousel from '../components/Carousel'
 import CollectionInfo from '../components/Collection'
 import Faq from '../components/Faq'
+import { http } from './../utils/http'
 
 const Home: NextPage = () => {
+  const [collection, setCollection] = useState<any>()
+  const [assets, setAssets] = useState<any[]>([])
+  const [assetsInfo, setAssetsInfo] = useState<any>()
+
+  useEffect(() => {
+    ;(async () => {
+      await getCollectionInfo()
+      await getCollectionAssets()
+    })()
+  }, [])
+
+  const getCollectionInfo = async () => {
+    const response = await http.get('/collection/forestcongo', {
+      headers: {
+        'X-API-KEY': process.env.NEXT_PUBLIC_OPENSEA_API_KEY || '',
+      },
+    })
+    const data = response.data.collection
+    // remove editors from collection
+    const { editors, ...rest } = data
+    setCollection(rest)
+  }
+
+  const getCollectionAssets = async (cursor?: string) => {
+    const response = await http.get(
+      `/assets?collection=${collectionSlug}&limit=${defaultLimit}&cursor=${cursor || ''}`,
+      {
+        headers: {
+          'X-API-KEY': process.env.NEXT_PUBLIC_OPENSEA_API_KEY || '',
+        },
+      }
+    )
+    const data = response.data
+    const assetsInfo = {
+      nextCursor: data.next,
+      previousCursor: data.previous,
+    }
+    setAssetsInfo(assetsInfo)
+    const assetsData = data.assets.map(x => {
+      return {
+        id: x.id,
+        image_url: x.image_url,
+        image_thumbnail_url: x.image_thumbnail_url,
+        name: x.name,
+        permalink: x.permalink,
+      }
+    })
+    setAssets([...assets, ...assetsData])
+  }
+
   return (
     <>
       <Head>
@@ -23,7 +75,7 @@ const Home: NextPage = () => {
         <div className='my-14 px-4 mx-auto max-w-[70ch] text-center'>
           <Image src='/assets/imgs/tree.png' width={80} height={80} alt='Tree' />
           <h1 className='font-bold text-black mt-6 px-4 text-[32px] md:text-[40px] max-w-[50ch] lg:whitespace-pre-wrap'>
-            {Texts.headline}
+            {collection?.description || Texts.headline}
           </h1>
           <p className='text-base mt-6 mb-8'>{Texts.sub}</p>
           <Link href={routes.openSea} passHref>
@@ -31,10 +83,17 @@ const Home: NextPage = () => {
               <Button reverse>{Texts.explore}</Button>
             </a>
           </Link>
-          <ProgressBar />
+          <ProgressBar
+            minted={collection?.stats?.total_sales || defaultMintedValue}
+            total={collection?.stats?.count || baseTotalValue}
+          />
         </div>
         <div className='lg:mx-16 2xl:mx-[220px]'>
-          <Carousel />
+          <Carousel
+            data={assets}
+            assetsInfo={assetsInfo}
+            getNextRecords={(cursor: string) => getCollectionAssets(cursor)}
+          />
           <CollectionInfo />
         </div>
         <Faq />
