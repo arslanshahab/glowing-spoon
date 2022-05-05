@@ -60,7 +60,6 @@ const Carousel = ({ data, assetsInfo, getNextRecords }: any) => {
             <span className='sr-only'>Prev</span>
           </button>
           <button
-            disabled={isDisabled('next')}
             onClick={moveNext}
             className='absolute -right-4 2xl:-right-8 w-12 h-12 flex items-center justify-center rounded-full shadow-md bg-white disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300'>
             {Arrow}
