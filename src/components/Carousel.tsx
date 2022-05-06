@@ -18,7 +18,9 @@ const Carousel = ({ data, assetsInfo, getNextRecords }: any) => {
   const moveNext = () => {
     if (carousel.current !== null && carousel.current.offsetWidth * currentIndex <= maxScrollWidth.current) {
       setCurrentIndex(prevState => prevState + 1)
-      getNextRecords(assetsInfo.nextCursor)
+      if (assetsInfo.nextCursor) {
+        getNextRecords(assetsInfo.nextCursor)
+      }
     }
   }
 
@@ -43,7 +45,7 @@ const Carousel = ({ data, assetsInfo, getNextRecords }: any) => {
   useEffect(() => {
     if (data) {
       maxScrollWidth.current = carousel.current ? carousel.current.scrollWidth - carousel.current.offsetWidth : 0
-      console.log(data, maxScrollWidth)
+      console.log('data', data, 'maxScrollWidth:', maxScrollWidth)
     }
   }, [getNextRecords, assetsInfo, data])
 
