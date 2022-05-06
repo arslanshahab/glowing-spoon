@@ -14,7 +14,7 @@ export const Question = ({ question, answer }) => {
         onClick={() => setExpanded(!expanded)}>
         <div className='question text-base font-bold' dangerouslySetInnerHTML={{ __html: question }}></div>
         <div
-          className={`relative w-8 h-8 bg-black bg-opacity-5 flex items-center justify-center rounded-full transition-transform transform origin-center ${
+          className={`relative shrink-0 w-8 h-8 bg-black bg-opacity-5 flex items-center justify-center rounded-full transition-transform transform origin-center ${
             expanded ? '-rotate-45' : 'rotate-0'
           }`}>
           <span className='w-2 h-0.5 bg-black bg-opacity-50'></span>
