@@ -45,7 +45,6 @@ const Carousel = ({ data, assetsInfo, getNextRecords }: any) => {
   useEffect(() => {
     if (data) {
       maxScrollWidth.current = carousel.current ? carousel.current.scrollWidth - carousel.current.offsetWidth : 0
-      console.log('data', data, 'maxScrollWidth:', maxScrollWidth)
     }
   }, [getNextRecords, assetsInfo, data])
 
