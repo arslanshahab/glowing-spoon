@@ -42,3 +42,8 @@ a {
     background-position: 0% 0%;
   }
 }
+
+.question span,
+a {
+  color: #0033ff;
+}
