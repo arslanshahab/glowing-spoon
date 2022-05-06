@@ -2,27 +2,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { routes } from '../constants/routes'
 import { Texts } from '../constants/texts'
-
-export const data = [
-  {
-    q: 'Lorem ipsum dolor sit ame',
-    a: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptatibus veritatis quasi dicta quiacorrupti beatae ullam, excepturi, dolore iusto at rerum minus in impedit nulla a est, expedita cumque.',
-  },
-  {
-    q: 'Lorem ipsum dolor sit ame',
-    a: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptatibus veritatis quasi dicta quiacorrupti beatae ullam, excepturi, dolore iusto at rerum minus in impedit nulla a est, expedita cumque.',
-  },
-
-  {
-    q: 'Lorem ipsum dolor sit ame',
-    a: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptatibus veritatis quasi dicta quiacorrupti beatae ullam, excepturi, dolore iusto at rerum minus in impedit nulla a est, expedita cumque.',
-  },
-
-  {
-    q: 'Lorem ipsum dolor sit ame',
-    a: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptatibus veritatis quasi dicta quiacorrupti beatae ullam, excepturi, dolore iusto at rerum minus in impedit nulla a est, expedita cumque.',
-  },
-]
+import { data } from '../constants/faq.json'
 
 export const Question = ({ question, answer }) => {
   const [expanded, setExpanded] = useState(false)
@@ -32,7 +12,7 @@ export const Question = ({ question, answer }) => {
       <div
         className='w-full flex justify-between items-center mt-6 cursor-pointer'
         onClick={() => setExpanded(!expanded)}>
-        <h3 className='text-base font-bold'>{question}</h3>
+        <div className='question text-base font-bold' dangerouslySetInnerHTML={{ __html: question }}></div>
         <div
           className={`relative w-8 h-8 bg-black bg-opacity-5 flex items-center justify-center rounded-full transition-transform transform origin-center ${
             expanded ? '-rotate-45' : 'rotate-0'
@@ -41,7 +21,7 @@ export const Question = ({ question, answer }) => {
           <span className='absolute w-2 h-0.5 bg-black rotate-90 bg-opacity-50'></span>
         </div>
       </div>
-      {expanded && <p className='text-base mt-6'>{answer}</p>}
+      {expanded && <div className='question text-base mt-6' dangerouslySetInnerHTML={{ __html: answer }}></div>}
     </div>
   )
 }
