@@ -12,6 +12,7 @@ import Carousel from '../components/Carousel'
 import CollectionInfo from '../components/Collection'
 import Faq from '../components/Faq'
 import { http } from './../utils/http'
+import { Globe } from '../constants/svgs'
 
 const Home: NextPage = () => {
   const [collection, setCollection] = useState<any>()
@@ -72,12 +73,19 @@ const Home: NextPage = () => {
       </Head>
       <div className='relative w-screen bg-image bg-white '>
         <Header />
-        <div className='my-14 px-4 mx-auto max-w-[70ch] text-center'>
-          <Image src='/assets/imgs/tree.png' width={80} height={80} alt='Tree' />
-          <h1 className='font-bold text-black mt-6 px-4 text-[32px] md:text-[40px] max-w-[50ch] lg:whitespace-pre-wrap'>
-            {collection?.description || Texts.headline}
+        <div className='mt-14 px-4 mx-auto max-w-[90ch] text-center'>
+          <Image src='/assets/imgs/hero.png' width={100} height={120} alt='Tree' />
+          <h1 className='font-bold text-black mt-6 px-4 text-[32px] md:text-[40px] leading-none lg:whitespace-pre-wrap'>
+            {Texts.title}
           </h1>
-          <p className='text-base mt-6 mb-8'>{Texts.sub}</p>
+          <p className='text-base mt-6 mb-6'>{Texts.subtitle}</p>
+        </div>
+        <div className='mx-auto w-full -mb-10 -md:mb-20'>{Globe}</div>
+        <div className='max-w-[70ch] px-4 mx-auto text-center'>
+          <h1 className='font-bold text-black mt-6 px-4 text-[32px] md:text-[40px] leading-none max-w-[50ch] lg:whitespace-pre-wrap'>
+            {Texts.headline}
+          </h1>
+          <p className='text-base mt-6 mb-8'>{Texts.sub}</p>{' '}
           <Link href={routes.openSea} passHref>
             <a target='_blank'>
               <Button reverse>{Texts.explore}</Button>
