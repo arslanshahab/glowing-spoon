@@ -17,6 +17,10 @@ module.exports = {
         inter: 'Inter',
       },
     },
+    screens: {
+      xs: '370px',
+      ...require('tailwindcss/defaultTheme').screens,
+    },
   },
   plugins: [],
 }
