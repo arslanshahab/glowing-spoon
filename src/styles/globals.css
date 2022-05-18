@@ -30,7 +30,7 @@ a {
   background-repeat: no-repeat, no-repeat;
   background-size: contain, contain;
   background-attachment: local, local;
-  background-position: -60% -60%, 120% -80%;
+  background-position: -60% -60%, 400% -100%;
 }
 
 @media only screen and (max-width: 640px) {
