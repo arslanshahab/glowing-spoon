@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Texts } from '../constants/texts'
 import { Square } from '../constants/svgs'
+import toast from 'react-hot-toast'
 
 export const LightText = ({ children }) => {
   return <p className='text-sm opacity-60'>{children}</p>
@@ -26,7 +27,18 @@ const CollectionInfo = () => {
           </div>
           <div
             className='text-black -ml-4 md:ml-0 md:text-white group relative my-4 md:my-2 lg:my-4 cursor-pointer'
-            onClick={() => navigator.clipboard.writeText(`${Texts.coordinatesValue}`)}>
+            onClick={() => {
+              navigator.clipboard.writeText(`${Texts.coordinatesValue}`)
+              toast(
+                t => {
+                  return <span onClick={() => toast.dismiss(t.id)}>{Texts.linkCopied}</span>
+                },
+                {
+                  duration: 4000,
+                  position: 'bottom-center',
+                }
+              )
+            }}>
             <button className='absolute right-0 top-2 cursor-pointer transition-all opacity-80 group-hover:opacity-100 group-active:opacity-100 group-active:scale-110'>
               <svg width='24' height='28' viewBox='0 0 24 34' xmlns='http://www.w3.org/2000/svg'>
                 <feBlend mode='difference' in='BackgroundImage' in2='SourceGraphic' />
