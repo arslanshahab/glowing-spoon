@@ -18,7 +18,6 @@ const Home: NextPage = () => {
   const [collection, setCollection] = useState<any>()
   const [assets, setAssets] = useState<any[]>([])
   const [assetsInfo, setAssetsInfo] = useState<any>()
-  const faqRef = useRef(null)
 
   useEffect(() => {
     ;(async () => {
