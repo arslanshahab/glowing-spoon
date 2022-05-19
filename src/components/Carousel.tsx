@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { Arrow } from '../constants/svgs'
 import { Texts } from '../constants/texts'
-import { maxHeaderSize } from 'http'
 
 const Carousel = ({ data, assetsInfo, getNextRecords }: any) => {
   const maxScrollWidth = useRef(0)
