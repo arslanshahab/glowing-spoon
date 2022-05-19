@@ -3,8 +3,13 @@ import Image from 'next/image'
 import { Arrow } from '../constants/svgs'
 import { Texts } from '../constants/texts'
 import { routes } from '../constants/routes'
+import { Asset } from '../models/Asset'
 
-const Carousel = ({ data }: any) => {
+interface IProps {
+  data: Asset[]
+}
+
+const Carousel = ({ data }: IProps) => {
   const maxScrollWidth = useRef(0)
   const [currentIndex, setCurrentIndex] = useState(0)
   const carousel = useRef<HTMLDivElement>(null)
@@ -139,7 +144,7 @@ const Carousel = ({ data }: any) => {
                 <a target='_blank' href={resource.permalink} rel='noopener noreferrer'>
                   <Image
                     draggable={false}
-                    src={resource.image}
+                    src={resource.thumbnail}
                     width={176}
                     height={176}
                     layout='fixed'
