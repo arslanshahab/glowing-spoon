@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
@@ -65,6 +65,11 @@ const Home: NextPage = () => {
     setAssets([...assets, ...assetsData])
   }
 
+  const handleFaqPress = () => {
+    const section = document.querySelector('#faq-section')
+    section?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
     <>
       <Head>
@@ -72,8 +77,8 @@ const Home: NextPage = () => {
         <meta name='description' content={Texts.headline} />
       </Head>
       <div className='relative w-screen bg-image bg-white '>
-        <Header />
-        <div className='mt-14 px-4 mx-auto max-w-[90ch] text-center'>
+        <Header onFaqPress={handleFaqPress} />
+        <div className='mt-14 xs:mt-0 px-4 mx-auto max-w-[90ch] text-center'>
           <Image src='/assets/imgs/hero.png' width={100} height={120} alt='Tree' />
           <h1 className='font-bold text-black mt-6 px-4 text-[32px] md:text-[40px] leading-none lg:whitespace-pre-wrap'>
             {Texts.title}
