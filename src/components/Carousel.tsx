@@ -129,7 +129,7 @@ const Carousel = ({ data }: any) => {
         </div>
         <div
           ref={carousel}
-          className='carousel-container relative flex gap-4 md:gap-8 xs:overflow-scroll sm:overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0 touch-auto'>
+          className='carousel-container relative flex gap-4 md:gap-8 xs:overflow-x xs:overflow-y-hidden sm:overflow-hidden scrollbar-hide scroll-smooth snap-x snap-mandatory touch-pan-x z-0 touch-auto'>
           {data?.map((resource, index) => {
             return (
               <div
