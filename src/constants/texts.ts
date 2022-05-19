@@ -26,6 +26,7 @@ export const Texts = {
   moreQuestions: 'Still have more questions? ',
   contact: 'Contact us',
   coordinatesValue: '3,317, 17.933',
+  linkCopied: 'Link copied to clipboard',
   faq: 'FAQ',
 }
 
