@@ -59,3 +59,78 @@ export const Globe = (
     </defs>
   </svg>
 )
+
+export const Hamburger = props => (
+  <svg width='56' height='56' viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg' {...props}>
+    <g filter='url(#filter0_d_230_233)'>
+      <circle cx='28' cy='24' r='18' fill='white' />
+    </g>
+    <rect x='20' y='19' width='16' height='2' rx='1' fill='#0033FF' />
+    <rect x='20' y='23' width='16' height='2' rx='1' fill='#0033FF' />
+    <rect x='20' y='27' width='16' height='2' rx='1' fill='#0033FF' />
+    <defs>
+      <filter
+        id='filter0_d_230_233'
+        x='0'
+        y='0'
+        width='56'
+        height='56'
+        filterUnits='userSpaceOnUse'
+        colorInterpolationFilters='sRGB'>
+        <feFlood floodOpacity='0' result='BackgroundImageFix' />
+        <feColorMatrix
+          in='SourceAlpha'
+          type='matrix'
+          values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
+          result='hardAlpha'
+        />
+        <feOffset dy='4' />
+        <feGaussianBlur stdDeviation='5' />
+        <feComposite in2='hardAlpha' operator='out' />
+        <feColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0' />
+        <feBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_230_233' />
+        <feBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_230_233' result='shape' />
+      </filter>
+    </defs>
+  </svg>
+)
+
+export const CloseIcon = props => (
+  <svg width='56' height='56' viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg' {...props}>
+    <g filter='url(#filter0_d_230_233)'>
+      <circle cx='28' cy='24' r='18' fill='white' />
+    </g>
+    <rect x='21.636' y='28.9497' width='16' height='2' rx='1' transform='rotate(-45 21.636 28.9497)' fill='#0033FF' />
+    <rect
+      width='16'
+      height='2'
+      rx='1'
+      transform='matrix(-0.707107 -0.707107 -0.707107 0.707107 34.3639 28.9497)'
+      fill='#0033FF'
+    />
+    <defs>
+      <filter
+        id='filter0_d_230_233'
+        x='0'
+        y='0'
+        width='56'
+        height='56'
+        filterUnits='userSpaceOnUse'
+        colorInterpolationFilters='sRGB'>
+        <feFlood floodOpacity='0' result='BackgroundImageFix' />
+        <feColorMatrix
+          in='SourceAlpha'
+          type='matrix'
+          values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
+          result='hardAlpha'
+        />
+        <feOffset dy='4' />
+        <feGaussianBlur stdDeviation='5' />
+        <feComposite in2='hardAlpha' operator='out' />
+        <feColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0' />
+        <feBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_230_233' />
+        <feBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_230_233' result='shape' />
+      </filter>
+    </defs>
+  </svg>
+)

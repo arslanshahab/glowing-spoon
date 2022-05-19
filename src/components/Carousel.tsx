@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { Arrow } from '../constants/svgs'
 import { Texts } from '../constants/texts'
-import { maxHeaderSize } from 'http'
 import { routes } from '../constants/routes'
 
 const Carousel = ({ data }: any) => {
