@@ -28,7 +28,7 @@ export const Question = ({ question, answer }) => {
 
 const Faq = () => {
   return (
-    <div className='px-4 max-w-[65ch] mx-auto'>
+    <div className='px-4 max-w-[65ch] mx-auto' id="faq-section">
       <h2 className='text-2xl text-center font-bold'>{Texts.questions}</h2>
       {data.map((item, index) => (
         <Question key={index} question={item.q} answer={item.a} />

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Image from 'next/image'
 import { routes } from '../constants/routes'
-import { baseTotalValue, collectionSlug, defaultLimit, defaultMintedValue, Texts } from '../constants/texts'
+import { baseTotalValue, defaultMintedValue, Texts } from '../constants/texts'
 import Button from '../components/Button'
 import Header from '../components/Header'
 import ProgressBar from '../components/ProgressBar'
@@ -13,16 +13,14 @@ import CollectionInfo from '../components/Collection'
 import Faq from '../components/Faq'
 import { http } from './../utils/http'
 import { Globe } from '../constants/svgs'
+import { assets } from '../constants/assets'
 
 const Home: NextPage = () => {
   const [collection, setCollection] = useState<any>()
-  const [assets, setAssets] = useState<any[]>([])
-  const [assetsInfo, setAssetsInfo] = useState<any>()
 
   useEffect(() => {
     ;(async () => {
       await getCollectionInfo()
-      await getCollectionAssets()
     })()
   }, [])
 
@@ -38,31 +36,9 @@ const Home: NextPage = () => {
     setCollection(rest)
   }
 
-  const getCollectionAssets = async (cursor?: string) => {
-    const response = await http.get(
-      `/assets?collection=${collectionSlug}&limit=${defaultLimit}&cursor=${cursor || ''}`,
-      {
-        headers: {
-          'X-API-KEY': process.env.NEXT_PUBLIC_OPENSEA_API_KEY || '',
-        },
-      }
-    )
-    const data = response.data
-    const assetsInfo = {
-      nextCursor: data.next,
-      previousCursor: data.previous,
-    }
-    setAssetsInfo(assetsInfo)
-    const assetsData = data.assets.map(x => {
-      return {
-        id: x.id,
-        image_url: x.image_url,
-        image_thumbnail_url: x.image_thumbnail_url,
-        name: x.name,
-        permalink: x.permalink,
-      }
-    })
-    setAssets([...assets, ...assetsData])
+  const handleFaqPress = () => {
+    const section = document.querySelector('#faq-section')
+    section?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   return (
@@ -72,8 +48,8 @@ const Home: NextPage = () => {
         <meta name='description' content={Texts.headline} />
       </Head>
       <div className='relative w-screen bg-image bg-white '>
-        <Header />
-        <div className='mt-14 px-4 mx-auto max-w-[90ch] text-center'>
+        <Header onFaqPress={handleFaqPress} />
+        <div className='mt-14 xs:mt-0 px-4 mx-auto max-w-[90ch] text-center'>
           <Image src='/assets/imgs/hero.png' width={100} height={120} alt='Tree' />
           <h1 className='font-bold text-black mt-6 px-4 text-[32px] md:text-[40px] leading-none lg:whitespace-pre-wrap'>
             {Texts.title}
@@ -97,11 +73,7 @@ const Home: NextPage = () => {
           />
         </div>
         <div className='lg:mx-16 2xl:mx-[220px]'>
-          <Carousel
-            data={assets}
-            assetsInfo={assetsInfo}
-            getNextRecords={(cursor: string) => getCollectionAssets(cursor)}
-          />
+          <Carousel data={assets} />
           <CollectionInfo />
         </div>
         <Faq />
