@@ -2,11 +2,15 @@ import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { Arrow } from '../constants/svgs'
 import { Texts } from '../constants/texts'
-import { maxHeaderSize } from 'http'
+import Lightbox from 'react-image-lightbox'
+import 'react-image-lightbox/style.css'
 
 const Carousel = ({ data, assetsInfo, getNextRecords }: any) => {
   const maxScrollWidth = useRef(0)
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [showLightbox, setShowLightbox] = useState(false)
+  const [imageIndex, setImageIndex] = useState(0)
+
   const carousel = useRef<HTMLDivElement>(null)
 
   const movePrev = () => {
@@ -47,6 +51,11 @@ const Carousel = ({ data, assetsInfo, getNextRecords }: any) => {
       maxScrollWidth.current = carousel.current ? carousel.current.scrollWidth - carousel.current.offsetWidth : 0
     }
   }, [getNextRecords, assetsInfo, data])
+
+  const lighboxToggler = (slideIndex: number) => {
+    setShowLightbox(!showLightbox)
+    setImageIndex(slideIndex)
+  }
 
   return (
     <div className='carousel my-12 py-4 overflow-x-hidden overflow-y-hidden px-6 lg:px-10'>
@@ -92,6 +101,16 @@ const Carousel = ({ data, assetsInfo, getNextRecords }: any) => {
           })}
         </div>
       </div>
+      {showLightbox && (
+        <Lightbox
+          mainSrc={data[imageIndex]}
+          nextSrc={data[(imageIndex + 1) % data.length]}
+          prevSrc={data[(imageIndex + data.length - 1) % data.length]}
+          onCloseRequest={() => setShowLightbox(false)}
+          onMovePrevRequest={() => setImageIndex((imageIndex + data.length - 1) % data.length)}
+          onMoveNextRequest={() => setImageIndex((imageIndex + 1) % data.length)}
+        />
+      )}
     </div>
   )
 }
