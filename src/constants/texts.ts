@@ -28,6 +28,8 @@ export const Texts = {
   linkCopied: 'Link copied to clipboard',
   faq: 'FAQ',
   learnMore: 'Learn more',
+  forestIOCollection: 'Forest.io NFT Collection',
+  buyOnOpenSea: 'Buy on OpenSea',
 }
 
 export const defaultMintedValue = 0

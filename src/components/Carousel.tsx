@@ -4,6 +4,8 @@ import { Arrow } from '../constants/svgs'
 import { Texts } from '../constants/texts'
 import { routes } from '../constants/routes'
 import { Asset } from '../models/Asset'
+import FsLightbox from 'fslightbox-react'
+import Button from './Button'
 
 interface IProps {
   data: Asset[]
@@ -12,6 +14,8 @@ interface IProps {
 const Carousel = ({ data }: IProps) => {
   const maxScrollWidth = useRef(0)
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [showLightbox, setShowLightbox] = useState(false)
+
   const carousel = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -108,6 +112,14 @@ const Carousel = ({ data }: IProps) => {
     )
   }
 
+  const lightboxToggler = (slideIndex: number) => {
+    setShowLightbox(!showLightbox)
+    setCurrentIndex(slideIndex)
+    window.onscroll = function () {
+      window.scrollTo(window.scrollX, window.scrollY)
+    }
+  }
+
   return (
     <div className='carousel my-12 py-4 overflow-x-hidden overflow-y-hidden px-6 lg:px-10'>
       <h2 className='text-2xl font-bold mb-6'>{Texts.preview}</h2>
@@ -141,7 +153,7 @@ const Carousel = ({ data }: IProps) => {
                 draggable={false}
                 key={index}
                 className='rounded-xl carousel-item text-center relative w-[176px] h-[176px] snap-start cursor-pointer transition-opacity hover:opacity-80'>
-                <a target='_blank' href={resource.permalink} rel='noopener noreferrer'>
+                <a href='#' rel='noopener noreferrer' onClick={() => lightboxToggler(index)}>
                   <Image
                     draggable={false}
                     src={resource.thumbnail}
@@ -158,6 +170,32 @@ const Carousel = ({ data }: IProps) => {
           {renderExploreCollectionItem()}
         </div>
       </div>
+      <FsLightbox
+        toggler={showLightbox}
+        sourceIndex={currentIndex}
+        sources={data?.map((resource, index) => {
+          return (
+            <div
+              draggable={false}
+              key={index}
+              className='rounded-xl carousel-item text-center relative w-[400px] h-[400px] snap-start transition-opacity hover:opacity-80 px-2 xs:w-full xs:h-full sm:overflow-visible'>
+              <Image
+                draggable={false}
+                src={resource.thumbnail}
+                width={400}
+                height={400}
+                layout='fixed'
+                objectFit='cover'
+                alt={resource.name}
+                className='rounded-xl block'
+              />
+              <small className='text-white opacity-60 block'>{Texts.forestIOCollection}</small>
+              <span className='text-white font-semibold text-lg block my-2'>{resource.name}</span>
+              <Button classes='w-auto xs:py-1.5'>{Texts.buyOnOpenSea}</Button>
+            </div>
+          )
+        })}
+      />
     </div>
   )
 }
