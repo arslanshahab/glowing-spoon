@@ -28,6 +28,8 @@ export const Texts = {
   coordinatesValue: '3,317, 17.933',
   linkCopied: 'Link copied to clipboard',
   faq: 'FAQ',
+  forestIOCollection: 'Forest.io NFT Collection',
+  buyOnOpenSea: 'Buy on OpenSea',
 }
 
 export const defaultMintedValue = 0
