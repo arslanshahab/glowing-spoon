@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { routes } from '../constants/routes'
-import { Hamburger } from '../constants/svgs'
+import { Hamburger, Logo } from '../constants/svgs'
 import { Texts } from '../constants/texts'
 import Button from './Button'
 import DrawerMenu from './DrawerMenu'
@@ -19,20 +19,23 @@ const Header = ({ onFaqPress }: IProps) => {
         <DrawerMenu onDrawerClose={() => setShowDrawer(false)} onFaqPress={onFaqPress} />
       ) : (
         <div className='px-4 lg:px-24 2xl:px-[240px] py-4 pt-6 w-full flex flex-row justify-between items-center text-lg'>
-          <div className='font-semibold opacity-80'>
+          <div className='font-semibold'>
             <Link href={routes.home}>
-              <a>Forest.io</a>
+              <a className='flex items-center'>
+                <Logo />
+                <span className='inline-block ml-1 text-primary'>Forest.io</span>
+              </a>
             </Link>
           </div>
           <div className='flex flex-row gap-4 items-center xs:hidden sm:flex'>
             <a className='cursor-pointer'>
-              <span className='text-black font-semibold text-sm' onClick={onFaqPress}>
+              <span className='text-primary font-semibold text-sm' onClick={onFaqPress}>
                 {Texts.faq}
               </span>
             </a>
             <Link href={routes.openSea} passHref>
               <a target='_blank'>
-                <span className='text-black font-semibold text-sm'>{Texts.openSea}</span>
+                <span className='text-primary font-semibold text-sm'>{Texts.openSea}</span>
               </a>
             </Link>
             <Link href={routes.discord} passHref>

@@ -25,14 +25,6 @@ a {
   box-sizing: border-box;
 }
 
-.bg-image {
-  background-image: url('/assets/svgs/ellipse1.svg'), url('/assets/svgs/ellipse2.svg');
-  background-repeat: no-repeat, no-repeat;
-  background-size: contain, contain;
-  background-attachment: local, local;
-  background-position: -60% -60%, 400% -100%;
-}
-
 @media only screen and (max-width: 640px) {
   .bg-image {
     background-image: url('/assets/svgs/ellipse3.svg');
@@ -45,5 +37,5 @@ a {
 
 .question span,
 a {
-  color: #0033ff;
+  color: #072910;
 }

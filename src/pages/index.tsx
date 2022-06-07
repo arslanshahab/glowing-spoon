@@ -49,14 +49,15 @@ const Home: NextPage = () => {
       </Head>
       <div className='relative w-screen bg-image bg-white '>
         <Header onFaqPress={handleFaqPress} />
-        <div className='mt-14 xs:mt-0 px-4 mx-auto max-w-[90ch] text-center'>
+        <div className='mt-14 xs:mt-0 px-4 mx-auto max-w-[115ch] text-center'>
           <Image src='/assets/imgs/hero.png' width={100} height={120} alt='Tree' />
-          <h1 className='font-bold text-black mt-6 px-4 text-[32px] md:text-[40px] leading-none lg:whitespace-pre-wrap'>
+          <h1 className='font-semibold text-black mt-6 px-4 text-[40px] md:text-[56px] leading-none lg:whitespace-pre-wrap'>
             {Texts.title}
           </h1>
-          <p className='text-base mt-6 mb-6'>{Texts.subtitle}</p>
+          <p className='leading-tight font-normal mt-6 mb-6 text-[32px] md:text-[40px]'>{Texts.subtitle}</p>
+          <Button reverse>{Texts.learnMore}</Button>
         </div>
-        <div className='mx-auto w-full -mb-10 -md:mb-20'>{Globe}</div>
+        <div className='mx-auto w-full flex items-center justify-center'>{Globe}</div>
         <div className='max-w-[70ch] px-4 mx-auto text-center'>
           <h1 className='font-bold text-black mt-6 px-4 text-[32px] md:text-[40px] leading-none max-w-[50ch] lg:whitespace-pre-wrap'>
             {Texts.headline}
