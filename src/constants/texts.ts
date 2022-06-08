@@ -18,9 +18,11 @@ export const Texts = {
   space: 'View from space',
   collection: 'Collection of 1000',
   community: 'Join our community',
-  bottomTitle: 'To protect every forest',
-  bottomText:
-    'We make it possible for any organization or individual, anywhere in the world, to contribute to the fight against climate change.',
+  bottomTitle: 'Welcome to the Forest Ecosystem.',
+  bottomText: `Forest.io vision is to have the <u>protection of over 30% of the forests</u> across the entire globe by 2028. That’s in less than a decade!
+    <br />
+    <br />
+    Our carbon climate offset NFTs are a key part of that goal.`,
   questions: 'Your questions, answered',
   moreQuestions: 'Still have more questions? ',
   contact: 'Contact us',
@@ -30,6 +32,7 @@ export const Texts = {
   learnMore: 'Learn more',
   forestIOCollection: 'Forest.io NFT Collection',
   buyOnOpenSea: 'Buy on OpenSea',
+  buyNFTOnOpenSea: 'Buy NFT on OpenSea',
   introTitle: 'Introducing novel way of forest monitoring',
 }
 

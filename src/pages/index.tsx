@@ -15,6 +15,7 @@ import { http } from './../utils/http'
 import { Globe } from '../constants/svgs'
 import { assets } from '../constants/assets'
 import { Introduction } from '../components/Introduction'
+import Footer from '../components/Footer'
 
 const Home: NextPage = () => {
   const [collection, setCollection] = useState<any>()
@@ -53,7 +54,7 @@ const Home: NextPage = () => {
         <Header onFaqPress={handleFaqPress} />
 
         {/* HERO SECTION */}
-        <div className='xs:pt-[70px] sm:mt-[140px] px-4 mx-auto max-w-[115ch] text-center'>
+        <div className='xs:pt-[40px] sm:mt-[80px] px-4 mx-auto max-w-[115ch] text-center'>
           <h1 className='font-semibold text-black mt-6 px-4 text-[40px] md:text-[56px] leading-tight lg:whitespace-pre-wrap'>
             {Texts.title}
           </h1>
@@ -66,7 +67,7 @@ const Home: NextPage = () => {
         </div>
 
         {/* MAP IMAGE */}
-        <div className='sm:mx-auto md:mt-[180px] sm:w-full sm:max-w-[115ch] sm:flex sm:items-center sm:justify-center relative overflow-hidden'>
+        <div className='sm:mx-auto md:mt-[80px] sm:w-full sm:max-w-[115ch] sm:flex sm:items-center sm:justify-center relative overflow-hidden'>
           {<Globe className='globe-mobile' />}
         </div>
 
@@ -76,7 +77,7 @@ const Home: NextPage = () => {
         </div>
 
         {/* COLLECTION INFO WITH PROGRESS */}
-        <div className='max-w-[70ch] px-4 mx-auto text-center sm:pt-[160px]'>
+        <div className='max-w-[70ch] px-4 mx-auto text-center sm:pt-[80px]'>
           <h1 className='font-semibold text-primary mt-6 px-4 text-[32px] md:text-[40px] leading-none max-w-[50ch] lg:whitespace-pre-wrap'>
             {Texts.headline}
           </h1>
@@ -93,7 +94,7 @@ const Home: NextPage = () => {
         </div>
 
         {/* CAROUSEL */}
-        <div className='lg:mx-16 2xl:mx-[220px] sm:pb-[160px]'>
+        <div className='lg:mx-16 2xl:mx-[220px] sm:pb-[80px]'>
           <Carousel data={assets} />
           <CollectionInfo />
         </div>
@@ -101,27 +102,42 @@ const Home: NextPage = () => {
         {/* FAQ */}
         <Faq />
 
-        <div className='w-screen'>
-          <div className='absolute w-screen bg-gradient-to-b from-white to-solitude bg-opacity-50 mix-blend-darken'>
+        <div className='lg:mx-16 2xl:mx-[200px] mt-32'>
+          <div className='bg-gradient-to-b from-chateauGreen to-chateauGreen bg-opacity-50 mix-blend-darken sm:rounded-3xl py-20 sm:py-28'>
             <div className='w-full lg:w-9/12 xl:w-3/4 mx-auto flex flex-col justify-center px-4 my-8'>
+              <h2 className='font-semibold px-4 mx-auto text-[32px] md:text-[40px] text-center mb-8'>
+                {Texts.bottomTitle}
+              </h2>
               <Image
                 src='/assets/imgs/mapimgwithoutbg.png'
                 width={1006}
                 height={529}
                 layout='intrinsic'
                 alt='Green world map'
+                className='mix-blend-multiply'
               />
-              <div className='mx-auto px-4 max-w-[60ch] text-center'>
-                <h2 className='font-bold mt-4 px-4 mx-auto text-[32px] md:text-[40px]'>{Texts.bottomTitle}</h2>
-                <p className='text-base mt-4 mb-6'>{Texts.bottomText}</p>
-                <Link href={routes.discord} passHref>
-                  <a>
-                    <Button>{Texts.community}</Button>
-                  </a>
-                </Link>
+              <div className='mx-auto px-4 max-w-[80ch] text-center'>
+                <p className='text-2xl mt-4 mb-6 opacity-80' dangerouslySetInnerHTML={{ __html: Texts.bottomText }}></p>
+                <div className='flex justify-center gap-4 flex-wrap sm:flex-nowrap'>
+                  <Link href={routes.openSea} passHref>
+                    <a target={'_blank'}>
+                      <Button reverse>{Texts.buyNFTOnOpenSea}</Button>
+                    </a>
+                  </Link>
+                  <Link href={routes.discord} passHref>
+                    <a target={'_blank'}>
+                      <Button reverse>{Texts.community}</Button>
+                    </a>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+
+        {/* FOOTER */}
+        <div className='lg:mx-16 2xl:mx-[220px] py-8'>
+          <Footer />
         </div>
       </div>
     </>
