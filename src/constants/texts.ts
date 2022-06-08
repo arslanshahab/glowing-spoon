@@ -30,6 +30,7 @@ export const Texts = {
   learnMore: 'Learn more',
   forestIOCollection: 'Forest.io NFT Collection',
   buyOnOpenSea: 'Buy on OpenSea',
+  introTitle: 'Introducing novel way of forest monitoring',
 }
 
 export const defaultMintedValue = 0

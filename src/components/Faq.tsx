@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import Link from 'next/link'
-import { routes } from '../constants/routes'
 import { Texts } from '../constants/texts'
 import { data } from '../constants/faq.json'
 

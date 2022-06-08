@@ -14,6 +14,7 @@ import Faq from '../components/Faq'
 import { http } from './../utils/http'
 import { Globe } from '../constants/svgs'
 import { assets } from '../constants/assets'
+import { Introduction } from '../components/Introduction'
 
 const Home: NextPage = () => {
   const [collection, setCollection] = useState<any>()
@@ -48,16 +49,34 @@ const Home: NextPage = () => {
         <meta name='description' content={Texts.headline} />
       </Head>
       <div className='relative w-screen bg-image bg-white '>
+        {/* HEADER/NAVBAR */}
         <Header onFaqPress={handleFaqPress} />
+
+        {/* HERO SECTION */}
         <div className='xs:pt-[70px] sm:mt-[140px] px-4 mx-auto max-w-[115ch] text-center'>
           <h1 className='font-semibold text-black mt-6 px-4 text-[40px] md:text-[56px] leading-tight lg:whitespace-pre-wrap'>
             {Texts.title}
           </h1>
-          <p className='leading-snug sm:leading-tight font-normal mt-6 mb-6 text-[24px] md:text-[40px]'>{Texts.subtitle}</p>
-          <Button reverse classes='my-4 xs:w-auto'>{Texts.learnMore}</Button>
+          <p className='leading-snug sm:leading-tight font-normal mt-6 mb-6 text-[24px] md:text-[40px]'>
+            {Texts.subtitle}
+          </p>
+          <Button reverse classes='my-4 xs:w-auto'>
+            {Texts.learnMore}
+          </Button>
         </div>
-        <div className='sm:mx-auto md:mt-[180px] sm:w-full sm:flex sm:items-center sm:justify-center relative overflow-hidden'>{<Globe className='globe-mobile' />}</div>
-        <div className='max-w-[70ch] px-4 mx-auto text-center'>
+
+        {/* MAP IMAGE */}
+        <div className='sm:mx-auto md:mt-[180px] sm:w-full sm:max-w-[115ch] sm:flex sm:items-center sm:justify-center relative overflow-hidden'>
+          {<Globe className='globe-mobile' />}
+        </div>
+
+        {/* INTRODUCTION SECTION */}
+        <div className='lg:mx-16 2xl:mx-[200px]'>
+          <Introduction />
+        </div>
+
+        {/* COLLECTION INFO WITH PROGRESS */}
+        <div className='max-w-[70ch] px-4 mx-auto text-center sm:pt-[160px]'>
           <h1 className='font-semibold text-primary mt-6 px-4 text-[32px] md:text-[40px] leading-none max-w-[50ch] lg:whitespace-pre-wrap'>
             {Texts.headline}
           </h1>
@@ -72,11 +91,16 @@ const Home: NextPage = () => {
             total={collection?.stats?.count || baseTotalValue}
           />
         </div>
-        <div className='lg:mx-16 2xl:mx-[220px]'>
+
+        {/* CAROUSEL */}
+        <div className='lg:mx-16 2xl:mx-[220px] sm:pb-[160px]'>
           <Carousel data={assets} />
           <CollectionInfo />
         </div>
+
+        {/* FAQ */}
         <Faq />
+
         <div className='w-screen'>
           <div className='absolute w-screen bg-gradient-to-b from-white to-solitude bg-opacity-50 mix-blend-darken'>
             <div className='w-full lg:w-9/12 xl:w-3/4 mx-auto flex flex-col justify-center px-4 my-8'>
