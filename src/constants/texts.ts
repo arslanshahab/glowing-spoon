@@ -3,7 +3,7 @@ export const Texts = {
   subtitle:
     'Forest.io is a technological AI company with one simple yet massive goal – help humanity save the planet Earth.',
   headline: 'Help us lease and protect\n a rainforest in Congo',
-  sub: 'Our Congo series of 1000 satellite imagery NFTs will go towards a permanent lease of over 1000 acres of a rain forest in the Republic of Congo.',
+  sub: 'Our Congo series of 1000 satellite imagery NFTs will go towards a permanent lease of over 1000 acres of a rain forest in the Republic of Congo',
   explore: 'Explore collection',
   openSea: 'OpenSea',
   roadMap: 'Roadmap',

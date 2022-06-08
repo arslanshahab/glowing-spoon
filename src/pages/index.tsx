@@ -49,23 +49,22 @@ const Home: NextPage = () => {
       </Head>
       <div className='relative w-screen bg-image bg-white '>
         <Header onFaqPress={handleFaqPress} />
-        <div className='mt-14 xs:mt-0 px-4 mx-auto max-w-[115ch] text-center'>
-          <Image src='/assets/imgs/hero.png' width={100} height={120} alt='Tree' />
-          <h1 className='font-semibold text-black mt-6 px-4 text-[40px] md:text-[56px] leading-none lg:whitespace-pre-wrap'>
+        <div className='xs:pt-[70px] sm:mt-[140px] px-4 mx-auto max-w-[115ch] text-center'>
+          <h1 className='font-semibold text-black mt-6 px-4 text-[40px] md:text-[56px] leading-tight lg:whitespace-pre-wrap'>
             {Texts.title}
           </h1>
-          <p className='leading-tight font-normal mt-6 mb-6 text-[32px] md:text-[40px]'>{Texts.subtitle}</p>
-          <Button reverse>{Texts.learnMore}</Button>
+          <p className='leading-snug sm:leading-tight font-normal mt-6 mb-6 text-[24px] md:text-[40px]'>{Texts.subtitle}</p>
+          <Button reverse classes='my-4 xs:w-auto'>{Texts.learnMore}</Button>
         </div>
-        <div className='mx-auto w-full flex items-center justify-center'>{Globe}</div>
+        <div className='sm:mx-auto md:mt-[180px] sm:w-full sm:flex sm:items-center sm:justify-center relative overflow-hidden'>{<Globe className='globe-mobile' />}</div>
         <div className='max-w-[70ch] px-4 mx-auto text-center'>
-          <h1 className='font-bold text-black mt-6 px-4 text-[32px] md:text-[40px] leading-none max-w-[50ch] lg:whitespace-pre-wrap'>
+          <h1 className='font-semibold text-primary mt-6 px-4 text-[32px] md:text-[40px] leading-none max-w-[50ch] lg:whitespace-pre-wrap'>
             {Texts.headline}
           </h1>
           <p className='text-base mt-6 mb-8'>{Texts.sub}</p>{' '}
           <Link href={routes.openSea} passHref>
             <a target='_blank'>
-              <Button reverse>{Texts.explore}</Button>
+              <Button>{Texts.explore}</Button>
             </a>
           </Link>
           <ProgressBar

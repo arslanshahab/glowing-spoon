@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Texts } from '../constants/texts'
-import { Square } from '../constants/svgs'
+import { Scale, Square } from '../constants/svgs'
 import toast from 'react-hot-toast'
 
 export const LightText = ({ children }) => {
@@ -14,7 +14,7 @@ export const BoldText = ({ children }) => {
 const CollectionInfo = () => {
   return (
     <div className='mb-8 pb-4 px-6 lg:px-10'>
-      <h2 className='hidden md:block text-2xl font-bold mb-6'>{Texts.info}</h2>
+      <h2 className='hidden md:block text-base font-bold mb-6 uppercase text-primary'>{Texts.info}</h2>
       <div className='grid md:grid-cols-3 gap-4 lg:gap-8 '>
         <div className='relative rounded-xl p-4 aspect-square flex flex-col justify-between md:justify-end md:bg-everglade text-white'>
           <h2 className='md:hidden text-2xl text-black font-bold mb-6 -ml-4'>{Texts.info}</h2>
@@ -83,6 +83,10 @@ const CollectionInfo = () => {
           />
           <strong className='z-10'>{Texts.space}</strong>
           <div className='absolute top-1/2 left-1/2 w-40 h-40 md:h-20 md:w-20 xl:h-40 xl:w-40 border border-white bg-white bg-opacity-10 transfrom -translate-x-1/2 -translate-y-1/2 '></div>
+          <span className='absolute bottom-4 right-4 bg-opacity-10 flex items-center gap-2'>
+            5 km
+            <Scale />
+          </span>
         </div>
         <div className='relative rounded-xl p-4 aspect-square flex flex-col bg-goblin text-white overflow-hidden'>
           <div className='absolute right-[20%] bottom-0 top-[20%] md:top-[30%] xl:top-[20%] h-[100%] w-[100%]'>

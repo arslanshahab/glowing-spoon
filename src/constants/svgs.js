@@ -26,8 +26,8 @@ export const Square = (
   </svg>
 )
 
-export const Globe = (
-  <svg width='1220' height='411' viewBox='0 0 1220 411' fill='none' xmlns='http://www.w3.org/2000/svg'>
+export const Globe = props => (
+  <svg width='1220' height='411' viewBox='0 0 1220 411' fill='none' xmlns='http://www.w3.org/2000/svg' {...props}>
     <path
       d='M0.798793 397.041C0.978172 296.105 69.0462 204.668 179.152 138.417C289.396 72.0823 441.722 31.0406 609.998 31.0406C778.275 31.0406 930.601 72.0823 1040.84 138.417C1150.95 204.668 1219.02 296.105 1219.2 397.041H0.798793Z'
       fill='white'
@@ -144,9 +144,9 @@ export const Hamburger = props => (
     <g filter='url(#filter0_d_230_233)'>
       <circle cx='28' cy='24' r='18' fill='white' />
     </g>
-    <rect x='20' y='19' width='16' height='2' rx='1' fill='#0033FF' />
-    <rect x='20' y='23' width='16' height='2' rx='1' fill='#0033FF' />
-    <rect x='20' y='27' width='16' height='2' rx='1' fill='#0033FF' />
+    <rect x='20' y='19' width='16' height='2' rx='1' fill='#083314' />
+    <rect x='20' y='23' width='16' height='2' rx='1' fill='#083314' />
+    <rect x='20' y='27' width='16' height='2' rx='1' fill='#083314' />
     <defs>
       <filter
         id='filter0_d_230_233'
@@ -179,13 +179,13 @@ export const CloseIcon = props => (
     <g filter='url(#filter0_d_230_233)'>
       <circle cx='28' cy='24' r='18' fill='white' />
     </g>
-    <rect x='21.636' y='28.9497' width='16' height='2' rx='1' transform='rotate(-45 21.636 28.9497)' fill='#0033FF' />
+    <rect x='21.636' y='28.9497' width='16' height='2' rx='1' transform='rotate(-45 21.636 28.9497)' fill='#072910' />
     <rect
       width='16'
       height='2'
       rx='1'
       transform='matrix(-0.707107 -0.707107 -0.707107 0.707107 34.3639 28.9497)'
-      fill='#0033FF'
+      fill='#072910'
     />
     <defs>
       <filter
@@ -223,5 +223,13 @@ export const Logo = () => (
       d='M5.1875 5L9.51578 7.49893V9.99787L5.1875 7.49893V5ZM10.4375 9.25L17.7956 5.00181V7.50075L12.4375 10.5942V12.7203L17.7956 9.62681V12.1257L12.4375 15.2192V19.9959H10.4384V16.3734L10.4375 16.3739V13.875L10.4384 13.8745V11.7484L10.4375 11.7489V9.25ZM9.51578 12.1239L5.1875 9.625V12.1239L9.51578 14.6229V12.1239Z'
       fill='#0E5923'
     />
+  </svg>
+)
+
+export const Scale = () => (
+  <svg width='21' height='10' viewBox='0 0 21 10' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <rect width='1' height='10' fill='white' />
+    <rect x='20' width='1' height='10' fill='white' />
+    <line x1='4.37115e-08' y1='5.5' x2='21' y2='5.5' stroke='white' />
   </svg>
 )
