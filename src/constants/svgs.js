@@ -2,7 +2,7 @@ export const Arrow = (
   <svg width='9' height='15' viewBox='0 0 9 15' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <path
       d='M8.57031 7.35938C8.57031 6.96875 8.42969 6.64844 8.10938 6.34375L2.20312 0.554688C1.96875 0.320312 1.67969 0.203125 1.33594 0.203125C0.648438 0.203125 0.0859375 0.765625 0.0859375 1.44531C0.0859375 1.78906 0.226562 2.10938 0.484375 2.35938L5.63281 7.35156L0.484375 12.3516C0.226562 12.6094 0.0859375 12.9219 0.0859375 13.2734C0.0859375 13.9609 0.648438 14.5156 1.33594 14.5156C1.67969 14.5156 1.96875 14.3984 2.20312 14.1641L8.10938 8.375C8.4375 8.0625 8.57031 7.74219 8.57031 7.35938Z'
-      fill='#0033FF'
+      fill='#072910'
     />
   </svg>
 )
@@ -141,7 +141,7 @@ export const Globe = props => (
 
 export const Hamburger = props => (
   <svg width='56' height='56' viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg' {...props}>
-    <g filter='url(#filter0_d_230_233)'>
+    <g filter='url(#filter0_d_325_620)'>
       <circle cx='28' cy='24' r='18' fill='white' />
     </g>
     <rect x='20' y='19' width='16' height='2' rx='1' fill='#083314' />
@@ -149,7 +149,7 @@ export const Hamburger = props => (
     <rect x='20' y='27' width='16' height='2' rx='1' fill='#083314' />
     <defs>
       <filter
-        id='filter0_d_230_233'
+        id='filter0_d_325_620'
         x='0'
         y='0'
         width='56'
@@ -166,9 +166,9 @@ export const Hamburger = props => (
         <feOffset dy='4' />
         <feGaussianBlur stdDeviation='5' />
         <feComposite in2='hardAlpha' operator='out' />
-        <feColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0' />
-        <feBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_230_233' />
-        <feBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_230_233' result='shape' />
+        <feColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0' />
+        <feBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_325_620' />
+        <feBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_325_620' result='shape' />
       </filter>
     </defs>
   </svg>
