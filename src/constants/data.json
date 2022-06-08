@@ -36,5 +36,22 @@
       "title": "NFT 6",
       "image": "/assets/imgs/forest6.jpg"
     }
+  ],
+  "introData": [
+    {
+      "title": "Problem",
+      "image": "/assets/imgs/problem.png",
+      "description": "Just a handful of decades ago, the world was brimming with up to 16 million square kilometers of mature tropical forests. Today, that number has been more than halved to due irresponsible deforestation projects and a general lack of sustainable alternatives."
+    },
+    {
+      "title": "Solution",
+      "image": "/assets/imgs/solution.png",
+      "description": "Our innovative satellite artificial intelligence data and unique Forest.io algorithms have the potential to reduce the cost of forestation efforts, improve the impact of these efforts, and, ultimately, secure a brighter and healthier future for everyone that calls planet Earth home."
+    },
+    {
+      "title": "Purpose",
+      "image": "/assets/imgs/purpose.png",
+      "description": "Through the proceeds of our NFTs we plan to support countries with rich rainforest habitation that might not have the resources or funds to protect these sensitive areas from illegal logging and other deforestation threats."
+    }
   ]
 }

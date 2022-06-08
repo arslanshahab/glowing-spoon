@@ -3,7 +3,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#0033FF',
+        primary: '#072910',
+        secondary: '#111A14CC',
+        chateauGreen: '#3DBC4F',
         cornflowerblue: '#E1E7FF',
         solitude: '#edf1ff',
         fern: '#5DC86C',
@@ -12,6 +14,7 @@ module.exports = {
         everglade: '#224831',
         alto: '#DCDCDC',
         dovegray: '#707070',
+        gin: '#EBF2ED',
       },
       fontFamily: {
         inter: 'Inter',

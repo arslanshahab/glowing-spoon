@@ -122,7 +122,7 @@ const Carousel = ({ data }: IProps) => {
 
   return (
     <div className='carousel my-12 py-4 overflow-x-hidden overflow-y-hidden px-6 lg:px-10'>
-      <h2 className='text-2xl font-bold mb-6'>{Texts.preview}</h2>
+      <h2 className='text-base font-bold mb-6 uppercase text-primary'>{Texts.preview}</h2>
       <div className='relative overflow-visible'>
         <div className='flex justify-between items-center absolute top left w-full h-full xs:hidden sm:flex'>
           <button
