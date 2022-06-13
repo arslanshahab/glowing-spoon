@@ -11,7 +11,7 @@ interface IProps {
 
 const DrawerMenu = ({ onFaqPress, onDrawerClose }: IProps) => {
   return (
-    <div className='px-4 lg:px-24 2xl:px-[240px] py-4 pt-6 w-full flex flex-col text-lg absolute z-50 h-screen bg-gin overflow-hidden overscroll-none'>
+    <div className='px-4 lg:px-24 2xl:px-[240px] py-4 pt-6 w-full flex flex-col text-lg z-50 h-full bg-gin overflow-hidden overscroll-none fixed'>
       <div className='h-max flex items-center justify-between w-full'>
         <div className='font-semibold'>
           <Link href={routes.home}>
@@ -45,13 +45,13 @@ const DrawerMenu = ({ onFaqPress, onDrawerClose }: IProps) => {
             </a>
           </Link>
         </div>
-        <div className='px-4 max-w-[60ch] text-center'>
-          <Link href={routes.discord} passHref>
-            <a target='_blank'>
-              <Button>{Texts.discord}</Button>
-            </a>
-          </Link>
-        </div>
+      </div>
+      <div className='px-4 max-w-[60ch] text-center'>
+        <Link href={routes.discord} passHref>
+          <a target='_blank'>
+            <Button>{Texts.discord}</Button>
+          </a>
+        </Link>
       </div>
     </div>
   )
