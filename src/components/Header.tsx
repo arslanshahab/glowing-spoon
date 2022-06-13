@@ -44,7 +44,7 @@ const Header = ({ onFaqPress }: IProps) => {
               </a>
             </Link>
           </div>
-          <div className='flex flex-row gap-4 items-center xs:flex sm:hidden'>
+          <div className='flex flex-row gap-4 items-center xs:flex sm:hidden relative right-[-.5rem]'>
             <Hamburger onClick={() => setShowDrawer(true)} />
           </div>
         </div>
