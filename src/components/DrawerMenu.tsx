@@ -11,7 +11,7 @@ interface IProps {
 
 const DrawerMenu = ({ onFaqPress, onDrawerClose }: IProps) => {
   return (
-    <div className='px-4 lg:px-24 2xl:px-[240px] py-4 pt-6 w-full flex flex-col text-lg z-50 h-full bg-gin overflow-hidden overscroll-none fixed'>
+    <div className='px-4 lg:px-24 2xl:px-[240px] py-4 pt-6 w-full flex flex-col text-lg z-50 h-full bg-gin overflow-hidden overscroll-none fixed sm:hidden'>
       <div className='h-max flex items-center justify-between w-full'>
         <div className='font-semibold'>
           <Link href={routes.home}>
@@ -21,7 +21,7 @@ const DrawerMenu = ({ onFaqPress, onDrawerClose }: IProps) => {
             </a>
           </Link>
         </div>
-        <a className='cursor-pointer'>
+        <a className='cursor-pointer relative right-[-.5rem]'>
           <span className='text-black font-semibold text-sm'>
             <CloseIcon onClick={onDrawerClose} />
           </span>
