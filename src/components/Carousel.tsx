@@ -105,8 +105,8 @@ const Carousel = ({ data }: IProps) => {
           target='_blank'
           href={routes.openSea}
           rel='noopener noreferrer'
-          className='w-[176px] h-[176px] bg-cornflowerblue text-primary hover:bg-primary hover:text-white flex justify-center items-center rounded-xl text-sm font-semibold'>
-          <span>Explore collection on OpenSea</span>
+          className='w-[176px] h-[176px] bg-gin text-primary hover:bg-primary hover:text-white flex justify-center items-center rounded-xl text-sm font-semibold'>
+          <span>{Texts.exploreOnOpenSea}</span>
         </a>
       </div>
     )
@@ -124,7 +124,7 @@ const Carousel = ({ data }: IProps) => {
     <div className='carousel my-12 py-4 overflow-x-hidden overflow-y-hidden px-6 lg:px-10'>
       <h2 className='text-base font-bold mb-6 uppercase text-primary'>{Texts.preview}</h2>
       <div className='relative overflow-visible'>
-        <div className='flex justify-between items-center absolute top left w-full h-full xs:hidden sm:flex'>
+        <div className='justify-between items-center absolute top left w-full h-full hidden sm:flex'>
           <button
             onClick={movePrev}
             className={`absolute -left-4 2xl:-left-8 w-12 h-12 flex items-center justify-center rounded-full shadow-md  bg-white disabled:opacity-25 disabled:cursor-not-allowed z-20 p-0 m-0 transition-all ease-in-out duration-300 ${

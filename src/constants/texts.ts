@@ -34,6 +34,7 @@ export const Texts = {
   buyOnOpenSea: 'Buy on OpenSea',
   buyNFTOnOpenSea: 'Buy NFT on OpenSea',
   introTitle: 'Introducing novel way of forest monitoring',
+  exploreOnOpenSea: 'Explore collection on OpenSea',
 }
 
 export const defaultMintedValue = 0

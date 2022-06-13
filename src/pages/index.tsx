@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
@@ -43,6 +43,11 @@ const Home: NextPage = () => {
     section?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
+  const handleLearnMorePress = () => {
+    const section = document.querySelector('#introduction-section')
+    section?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
     <>
       <Head>
@@ -61,7 +66,7 @@ const Home: NextPage = () => {
           <p className='leading-snug sm:leading-tight font-normal mt-6 mb-6 text-[24px] md:text-[40px]'>
             {Texts.subtitle}
           </p>
-          <Button reverse classes='my-4 xs:w-auto'>
+          <Button reverse classes='my-4 xs:w-auto' onClick={() => handleLearnMorePress()}>
             {Texts.learnMore}
           </Button>
         </div>
