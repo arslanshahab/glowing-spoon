@@ -86,7 +86,7 @@ const Home: NextPage = () => {
           <h1 className='font-semibold text-primary mt-6 px-4 text-[32px] md:text-[40px] leading-none max-w-[50ch] lg:whitespace-pre-wrap'>
             {Texts.headline}
           </h1>
-          <p className='text-base mt-6 mb-8'>{Texts.sub}</p>{' '}
+          <p className='text-base mt-6 mb-8 max-w-[50ch] text-center m-auto'>{Texts.sub}</p>{' '}
           <Link href={routes.openSea} passHref>
             <a target='_blank'>
               <Button>{Texts.explore}</Button>
