@@ -27,7 +27,7 @@ const Header = ({ onFaqPress }: IProps) => {
               </a>
             </Link>
           </div>
-          <div className='flex flex-row gap-4 items-center xs:hidden sm:flex'>
+          <div className='flex-row gap-4 items-center hidden sm:flex'>
             <a className='cursor-pointer'>
               <span className='text-primary font-semibold text-sm' onClick={onFaqPress}>
                 {Texts.faq}
