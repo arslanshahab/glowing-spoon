@@ -1,0 +1,18 @@
+{
+  "functions": {
+    "predeploy": ["rm -rf nextjs", "npm run build"],
+    "runtime": "nodejs16",
+    "source": "."
+  },
+  "hosting": {
+    "public": "nextjs",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "cleanUrls": false,
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "nextjs-server"
+      }
+    ]
+  }
+}
