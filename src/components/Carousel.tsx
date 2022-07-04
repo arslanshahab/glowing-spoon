@@ -178,7 +178,7 @@ const Carousel = ({ data }: IProps) => {
             <div
               draggable={false}
               key={index}
-              className='rounded-xl carousel-item text-center relative w-[400px] h-[400px] snap-start transition-opacity hover:opacity-80 px-2 xs:w-full xs:h-full sm:overflow-visible'>
+              className='rounded-xl carousel-item text-center relative w-[400px] h-[400px] snap-start transition-opacity px-2 xs:w-full xs:h-full sm:overflow-visible'>
               <Image
                 draggable={false}
                 src={resource.thumbnail}
@@ -188,6 +188,8 @@ const Carousel = ({ data }: IProps) => {
                 objectFit='cover'
                 alt={resource.name}
                 className='rounded-xl block'
+                priority
+                placeholder='blur'
               />
               <small className='text-white opacity-60 block'>{Texts.forestIOCollection}</small>
               <span className='text-white font-semibold text-lg block my-2'>{resource.name}</span>
