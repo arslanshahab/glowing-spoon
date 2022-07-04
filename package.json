@@ -2,6 +2,7 @@
   "name": "forest.io",
   "version": "0.1.0",
   "private": true,
+  "main": "server.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,6 +12,8 @@
   },
   "dependencies": {
     "axios": "^0.27.0",
+    "firebase-admin": "^11.0.0",
+    "firebase-functions": "^3.21.2",
     "fslightbox-react": "^1.6.2-2",
     "next": "12.1.5",
     "react": "18.0.0",
