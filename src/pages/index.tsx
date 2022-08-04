@@ -73,7 +73,7 @@ const Home: NextPage = () => {
 
         {/* MAP IMAGE */}
         <div className='sm:mx-auto md:mt-[80px] sm:w-full sm:max-w-[115ch] sm:flex sm:items-center sm:justify-center relative overflow-hidden'>
-          {<Globe className='globe-mobile' />}
+          <Globe className='globe-mobile' />
         </div>
 
         {/* INTRODUCTION SECTION */}
@@ -109,18 +109,21 @@ const Home: NextPage = () => {
 
         <div className='lg:mx-16 2xl:mx-[200px] mt-32'>
           <div className='bg-gradient-to-b from-chateauGreen to-chateauGreen bg-opacity-50 mix-blend-darken sm:rounded-3xl py-20 sm:py-28'>
-            <div className='w-full lg:w-9/12 xl:w-3/4 mx-auto flex flex-col justify-center px-4 my-8'>
+            <div className='w-full lg:w-9/12 xl:w-3/4 mx-auto flex flex-col justify-center px-4 my-8 items-center'>
               <h2 className='font-semibold px-4 mx-auto text-[32px] md:text-[40px] text-center mb-8'>
                 {Texts.bottomTitle}
               </h2>
-              <Image
-                src='/assets/imgs/mapimgwithoutbg.png'
-                width={1006}
-                height={529}
-                layout='intrinsic'
-                alt='Green world map'
-                className='mix-blend-multiply'
-              />
+              <div className='block w-full'>
+                <Image
+                  src='/assets/imgs/mapwithoutbg.png'
+                  width={1006}
+                  height={529}
+                  layout='responsive'
+                  alt='green world map'
+                  className='mix-blend-multiply'
+                  priority
+                />
+              </div>
               <div className='mx-auto px-4 max-w-[80ch] text-center'>
                 <p className='text-2xl mt-4 mb-6 opacity-80' dangerouslySetInnerHTML={{ __html: Texts.bottomText }}></p>
                 <div className='flex justify-center gap-4 flex-wrap sm:flex-nowrap'>

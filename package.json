@@ -16,10 +16,12 @@
     "firebase-functions": "^3.21.2",
     "fslightbox-react": "^1.6.2-2",
     "next": "12.1.5",
+    "next-images": "^1.8.4",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-hot-toast": "^2.2.0",
     "react-image-lightbox": "^5.1.4",
+    "sharp": "^0.30.7",
     "simple-react-lightbox": "^3.6.9-0",
     "tailwind-scrollbar-hide": "^1.1.7"
   },

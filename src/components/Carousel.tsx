@@ -6,6 +6,7 @@ import { routes } from '../constants/routes'
 import { Asset } from '../models/Asset'
 import FsLightbox from 'fslightbox-react'
 import Button from './Button'
+import { useRouter } from 'next/router'
 
 interface IProps {
   data: Asset[]
@@ -13,6 +14,7 @@ interface IProps {
 
 const Carousel = ({ data }: IProps) => {
   const maxScrollWidth = useRef(0)
+  const router = useRouter()
   const [currentIndex, setCurrentIndex] = useState(0)
   const [showLightbox, setShowLightbox] = useState(false)
 
@@ -162,6 +164,8 @@ const Carousel = ({ data }: IProps) => {
                     layout='fixed'
                     alt={resource.name}
                     className='rounded-xl'
+                    priority
+                    placeholder='blur'
                   />
                 </a>
               </div>
@@ -193,7 +197,9 @@ const Carousel = ({ data }: IProps) => {
               />
               <small className='text-white opacity-60 block'>{Texts.forestIOCollection}</small>
               <span className='text-white font-semibold text-lg block my-2'>{resource.name}</span>
-              <Button classes='w-auto xs:py-1.5'>{Texts.buyOnOpenSea}</Button>
+              <a href={resource.permalink} target={'_blank'} rel={'noreferrer'}>
+                <Button classes='w-auto xs:py-1.5'>{Texts.buyOnOpenSea}</Button>
+              </a>
             </div>
           )
         })}
